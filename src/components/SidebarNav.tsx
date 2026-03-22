@@ -1,6 +1,8 @@
 'use client'
 import { usePathname, useRouter } from 'next/navigation'
-import { ClipboardCheck, BarChart3, BookOpen, Keyboard, Languages, LogOut } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { supabase } from '@/lib/supabase'
+import { ClipboardCheck, BarChart3, BookOpen, Keyboard, Languages, LogOut, ShieldCheck } from 'lucide-react'
 
 const NAV_ITEMS = [
   { label: '実力テスト', icon: ClipboardCheck, href: '/test' },
@@ -10,9 +12,18 @@ const NAV_ITEMS = [
   { label: '学習記録', icon: BookOpen, href: '/study-log' },
 ]
 
+const ADMIN_EMAILS = ['masa@unicornfarm.co', 'moe7120028@gmail.com']
+
 export default function SidebarNav() {
   const pathname = usePathname()
   const router = useRouter()
+  const [isAdmin, setIsAdmin] = useState(false)
+
+  useEffect(() => {
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      if (user && ADMIN_EMAILS.includes(user.email || '')) setIsAdmin(true)
+    })
+  }, [])
 
   const authPages = ['/login', '/signup', '/onboarding', '/motivation', '/logout']
   const hide = authPages.some(p => pathname.startsWith(p))
@@ -45,6 +56,15 @@ export default function SidebarNav() {
           })}
         </nav>
         <div className="p-3 border-t border-gray-100">
+          {isAdmin && (
+            <button onClick={() => router.push('/admin')}
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left transition-all mb-1 ${
+                pathname === '/admin' ? 'bg-purple-50 text-purple-700 font-semibold' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-800'
+              }`}>
+              <ShieldCheck size={18} className={pathname === '/admin' ? 'text-purple-500' : 'text-gray-400'} />
+              <span className="text-sm">管理画面</span>
+            </button>
+          )}
           <button onClick={() => router.push('/logout')}
             className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left text-gray-500 hover:bg-gray-50 hover:text-gray-700 transition-all">
             <LogOut size={18} className="text-gray-400" />

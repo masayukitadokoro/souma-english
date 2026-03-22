@@ -2,9 +2,10 @@ import SidebarNav from '@/components/SidebarNav'
 
 export default function StudentLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div style={{ display: 'flex', minHeight: '100vh' }}>
+    <div className="min-h-screen">
       <SidebarNav />
-      <main style={{ marginLeft: '200px', flex: 1, minWidth: 0 }}>
+      {/* モバイル: トップバー分のpt-14, PC: サイドバー分のml-52 */}
+      <main className="pt-14 md:pt-0 md:ml-52">
         {children}
       </main>
     </div>

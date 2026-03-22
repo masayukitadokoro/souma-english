@@ -1,0 +1,84 @@
+{
+  "passages": [
+    {
+      "id": 1, "grade": 1, "cefr": "A1",
+      "title": "My Tool Box",
+      "text": "I have a tool box. In my tool box, I have a hammer, a saw, and some nails. I like to build things. My dream is to be a carpenter.",
+      "questions": [
+        { "question": "What does the person have?", "options": ["A tool box", "A lunch box", "A music box", "A toy box"], "correct": 0, "explanation": "最初の文に「I have a tool box.（道具箱を持っています）」とあります。" },
+        { "question": "What is in the tool box?", "options": ["A hammer, a saw, and nails", "A pen, a ruler, and nails", "A hammer, a brush, and nails", "A saw, a pen, and scissors"], "correct": 0, "explanation": "「a hammer, a saw, and some nails（ハンマー、のこぎり、釘）」が入っています。" },
+        { "question": "What is the person's dream?", "options": ["To be a carpenter", "To be a teacher", "To be a doctor", "To be a singer"], "correct": 0, "explanation": "最後の文に「My dream is to be a carpenter.（夢は大工になること）」とあります。" }
+      ]
+    },
+    {
+      "id": 2, "grade": 1, "cefr": "A1",
+      "title": "My School Day",
+      "text": "I go to school every day. I study English and math. I like English class. My teacher is kind. School is fun.",
+      "questions": [
+        { "question": "What subjects does the person study?", "options": ["English and math", "English and art", "Math and science", "English and music"], "correct": 0, "explanation": "「I study English and math.（英語と数学を勉強します）」とあります。" },
+        { "question": "How is the teacher?", "options": ["Kind", "Strict", "Funny", "Quiet"], "correct": 0, "explanation": "「My teacher is kind.（先生は親切です）」とあります。" },
+        { "question": "How does the person feel about school?", "options": ["It is fun", "It is hard", "It is boring", "It is long"], "correct": 0, "explanation": "「School is fun.（学校は楽しい）」とあります。" }
+      ]
+    },
+    {
+      "id": 3, "grade": 1, "cefr": "A1",
+      "title": "Building a Chair",
+      "text": "Souma wants to build a chair. He has wood and nails. First, he cuts the wood. Then, he puts the pieces together. The chair is ready. He is happy.",
+      "questions": [
+        { "question": "What does Souma want to build?", "options": ["A chair", "A table", "A desk", "A shelf"], "correct": 0, "explanation": "最初の文に「Souma wants to build a chair.（椅子を作りたい）」とあります。" },
+        { "question": "What does he do first?", "options": ["He cuts the wood", "He puts pieces together", "He paints the chair", "He buys nails"], "correct": 0, "explanation": "「First, he cuts the wood.（まず木を切る）」とあります。First（最初）がキーワードです。" },
+        { "question": "How does Souma feel at the end?", "options": ["Happy", "Tired", "Sad", "Angry"], "correct": 0, "explanation": "「He is happy.（彼は嬉しい）」とあります。" }
+      ]
+    },
+    {
+      "id": 4, "grade": 1, "cefr": "A1+",
+      "title": "A Letter to My Friend",
+      "text": "Dear Ken, I am in Tokyo now. Tokyo is a big city. There are many people and buildings. I went to Asakusa yesterday. It was very beautiful. I will come home next week. See you soon! Souma",
+      "questions": [
+        { "question": "Where is Souma now?", "options": ["In Tokyo", "In Osaka", "In Kyoto", "In Asakusa"], "correct": 0, "explanation": "「I am in Tokyo now.（今東京にいます）」とあります。" },
+        { "question": "Where did Souma go yesterday?", "options": ["Asakusa", "Shibuya", "Shinjuku", "Ueno"], "correct": 0, "explanation": "「I went to Asakusa yesterday.（昨日浅草に行った）」とあります。" },
+        { "question": "When will Souma come home?", "options": ["Next week", "Tomorrow", "Today", "Next month"], "correct": 0, "explanation": "「I will come home next week.（来週帰ります）」とあります。" }
+      ]
+    },
+    {
+      "id": 5, "grade": 1, "cefr": "A1+",
+      "title": "My Hobby",
+      "text": "My hobby is making things. I make birdhouses and small boats. I use wood, nails, and glue. It takes a long time, but I enjoy it. My friends like my work.",
+      "questions": [
+        { "question": "What is the person's hobby?", "options": ["Making things", "Playing games", "Reading books", "Playing soccer"], "correct": 0, "explanation": "「My hobby is making things.（趣味はものを作ること）」とあります。" },
+        { "question": "What materials does the person use?", "options": ["Wood, nails, and glue", "Paper, scissors, and glue", "Wood, paint, and nails", "Metal, nails, and glue"], "correct": 0, "explanation": "「I use wood, nails, and glue.（木・釘・接着剤を使う）」とあります。" },
+        { "question": "What do the person's friends think?", "options": ["They like the work", "They don't like the work", "They are not interested", "They want to try it"], "correct": 0, "explanation": "「My friends like my work.（友達は私の作品が好き）」とあります。" }
+      ]
+    },
+    {
+      "id": 6, "grade": 2, "cefr": "A2",
+      "title": "The Old House",
+      "text": "There is an old house near my school. It was built 100 years ago. The walls are made of wood. The roof needs to be fixed. My grandfather says that old houses are beautiful. I think so, too.",
+      "questions": [
+        { "question": "When was the house built?", "options": ["100 years ago", "50 years ago", "200 years ago", "Last year"], "correct": 0, "explanation": "「It was built 100 years ago.（100年前に建てられた）」とあります。was builtは受動態です。" },
+        { "question": "What needs to be fixed?", "options": ["The roof", "The walls", "The door", "The windows"], "correct": 0, "explanation": "「The roof needs to be fixed.（屋根を修理する必要がある）」とあります。" },
+        { "question": "What does the grandfather think about old houses?", "options": ["They are beautiful", "They are dangerous", "They are boring", "They are small"], "correct": 0, "explanation": "「old houses are beautiful（古い家は美しい）」と言っています。" }
+      ]
+    },
+    {
+      "id": 7, "grade": 2, "cefr": "A2",
+      "title": "English Around the World",
+      "text": "English is spoken in many countries. About 1.5 billion people use English. Some people speak it as their first language. Others learn it as a second language. English is important for business and travel.",
+      "questions": [
+        { "question": "How many people use English?", "options": ["About 1.5 billion", "About 500 million", "About 2 billion", "About 1 billion"], "correct": 0, "explanation": "「About 1.5 billion people use English.（約15億人が英語を使う）」とあります。" },
+        { "question": "Why is English important?", "options": ["For business and travel", "For school and sports", "For music and art", "For cooking and shopping"], "correct": 0, "explanation": "「English is important for business and travel.（ビジネスと旅行に重要）」とあります。" },
+        { "question": "What is a 'second language'?", "options": ["A language learned after your first language", "The most popular language", "A language spoken in two countries", "The second English class"], "correct": 0, "explanation": "第二言語とは、母語の後に学ぶ言語のことです。文脈から「Others learn it as a second language（他の人は第二言語として学ぶ）」とあります。" }
+      ]
+    },
+    {
+      "id": 8, "grade": 2, "cefr": "A2",
+      "title": "Traditional Japanese Carpentry",
+      "text": "Japan has a long history of carpentry. Traditional Japanese carpenters use special tools. They do not use many nails. Instead, they fit pieces of wood together carefully. This skill takes many years to learn.",
+      "questions": [
+        { "question": "What is special about traditional Japanese carpentry?", "options": ["They don't use many nails", "They use only metal tools", "They build very fast", "They use plastic materials"], "correct": 0, "explanation": "「They do not use many nails.（釘をあまり使わない）」がポイントです。" },
+        { "question": "How do traditional carpenters join wood?", "options": ["They fit pieces together", "They use strong glue", "They use many nails", "They use screws"], "correct": 0, "explanation": "「they fit pieces of wood together carefully（木の部品を丁寧に組み合わせる）」とあります。" },
+        { "question": "How long does it take to learn this skill?", "options": ["Many years", "A few months", "One year", "A few days"], "correct": 0, "explanation": "「This skill takes many years to learn.（このスキルは習得に何年もかかる）」とあります。" }
+      ]
+    }
+  ]
+}

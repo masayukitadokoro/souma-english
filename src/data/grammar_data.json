@@ -1,0 +1,364 @@
+{
+  "units": [
+    {
+      "id": "g1-1",
+      "title": "be動詞（am/is/are）",
+      "grade": 1,
+      "questions": [
+        {
+          "question": "正しい文はどれですか？",
+          "english": "I ___ a student.",
+          "options": [
+            "I am a student.",
+            "I be a student.",
+            "I is a student.",
+            "I are a student."
+          ],
+          "correct": 0,
+          "hint": "主語がIのときのbe動詞は？",
+          "explanation": "主語がIのときはbe動詞は「am」を使います。I am = 私は〜です。"
+        },
+        {
+          "question": "正しい文はどれですか？",
+          "english": "He ___ a carpenter.",
+          "options": [
+            "He is a carpenter.",
+            "He be a carpenter.",
+            "He am a carpenter.",
+            "He are a carpenter."
+          ],
+          "correct": 0,
+          "hint": "主語がHe/She/Itのときのbe動詞は？",
+          "explanation": "He/She/Itのときはbe動詞は「is」を使います。"
+        },
+        {
+          "question": "「あなたたちは中学生です」を英語にすると？",
+          "english": null,
+          "options": [
+            "You am junior high school students.",
+            "You is junior high school students.",
+            "You were junior high school students.",
+            "You are junior high school students."
+          ],
+          "correct": 3,
+          "hint": "You/We/Theyのときのbe動詞は？",
+          "explanation": "You/We/Theyのときはbe動詞は「are」を使います。"
+        },
+        {
+          "question": "次の文の意味は？「This is a hammer.」",
+          "english": "This is a hammer.",
+          "options": [
+            "これは道具箱です",
+            "これは釘です",
+            "これはハンマーです",
+            "これはのこぎりです"
+          ],
+          "correct": 2,
+          "hint": "hammerの意味は？",
+          "explanation": "This is ~は「これは〜です」という意味。hammerはハンマーです。"
+        },
+        {
+          "question": "「私は宮大工ではありません」を英語にすると？",
+          "english": null,
+          "options": [
+            "I am no a shrine carpenter.",
+            "I not am a shrine carpenter.",
+            "I is not a shrine carpenter.",
+            "I am not a shrine carpenter."
+          ],
+          "correct": 3,
+          "hint": "be動詞の否定文はbe動詞の後にnotを置く",
+          "explanation": "be動詞の否定文は「be動詞 + not」です。am not, is not, are notの形を使います。"
+        }
+      ]
+    },
+    {
+      "id": "g1-2",
+      "title": "一般動詞の現在形",
+      "grade": 1,
+      "questions": [
+        {
+          "question": "「私は木を切ります」を英語にすると？",
+          "english": null,
+          "options": [
+            "I cuts wood.",
+            "I cutting wood.",
+            "I cut wood.",
+            "I am cut wood."
+          ],
+          "correct": 2,
+          "hint": "主語がIのとき一般動詞は原形のまま",
+          "explanation": "主語がI/You/We/Theyのとき、一般動詞はそのまま（原形）を使います。"
+        },
+        {
+          "question": "「彼は毎日木を磨きます」を英語にすると？",
+          "english": null,
+          "options": [
+            "He polishing wood every day.",
+            "He polishes wood every day.",
+            "He polish wood every day.",
+            "He is polish wood every day."
+          ],
+          "correct": 1,
+          "hint": "主語がHe/She/Itのとき動詞にsまたはesをつける",
+          "explanation": "主語がHe/She/Itのとき、一般動詞には-(e)sをつけます。polish→polishes"
+        },
+        {
+          "question": "「私はサッカーをしません」を英語にすると？",
+          "english": null,
+          "options": [
+            "I not play soccer.",
+            "I am not play soccer.",
+            "I doesn't play soccer.",
+            "I don't play soccer."
+          ],
+          "correct": 3,
+          "hint": "一般動詞の否定文はdon't/doesn'tを使う",
+          "explanation": "I/You/We/Theyの否定文はdon't + 動詞原形です。"
+        },
+        {
+          "question": "「あなたは英語を勉強しますか？」を英語にすると？",
+          "english": null,
+          "options": [
+            "Do you study English?",
+            "Are you study English?",
+            "You study English?",
+            "Does you study English?"
+          ],
+          "correct": 0,
+          "hint": "一般動詞の疑問文はDo/Doesを文頭に置く",
+          "explanation": "I/You/We/Theyの疑問文はDo + 主語 + 動詞原形？の形です。"
+        },
+        {
+          "question": "次の文の意味は？「She likes building things.」",
+          "english": "She likes building things.",
+          "options": [
+            "彼女はものを作りません",
+            "彼女はものを作ることが好きです",
+            "彼女はものを買うことが好きです",
+            "彼女はものを壊すことが好きです"
+          ],
+          "correct": 1,
+          "hint": "likes=好き、building=作ること、things=もの",
+          "explanation": "likes building thingsは「ものを作ることが好き」という意味です。"
+        }
+      ]
+    },
+    {
+      "id": "g1-3",
+      "title": "疑問詞",
+      "grade": 1,
+      "questions": [
+        {
+          "question": "「これは何ですか？」を英語にすると？",
+          "english": null,
+          "options": [
+            "What are this?",
+            "This is what?",
+            "What this is?",
+            "What is this?"
+          ],
+          "correct": 3,
+          "hint": "「何」はwhat、「〜は何ですか」はWhat is ~?",
+          "explanation": "「何ですか？」はWhat is ~?の形。What is this? = これは何ですか？"
+        },
+        {
+          "question": "「あなたはどこに住んでいますか？」を英語にすると？",
+          "english": null,
+          "options": [
+            "Where are you live?",
+            "Where do you live?",
+            "Where you live?",
+            "Where does you live?"
+          ],
+          "correct": 1,
+          "hint": "「どこ」はwhere、一般動詞の疑問文はdoを使う",
+          "explanation": "Where do you ~? = あなたはどこで〜しますか？"
+        },
+        {
+          "question": "「彼は何時に起きますか？」を英語にすると？",
+          "english": null,
+          "options": [
+            "What time do he get up?",
+            "What time does he get up?",
+            "What time he gets up?",
+            "When does he get up?"
+          ],
+          "correct": 1,
+          "hint": "「何時」はwhat time、主語がHeのときはdoes",
+          "explanation": "What time does he ~? = 彼は何時に〜しますか？主語がheなのでdoesを使います。"
+        },
+        {
+          "question": "「なぜあなたは英語を勉強するのですか？」を英語にすると？",
+          "english": null,
+          "options": [
+            "For what you study English?",
+            "Why you study English?",
+            "Why do you study English?",
+            "Why are you study English?"
+          ],
+          "correct": 2,
+          "hint": "「なぜ」はwhy",
+          "explanation": "Why do you ~? = なぜあなたは〜しますか？"
+        },
+        {
+          "question": "「誰があなたに英語を教えましたか？」を英語にすると？",
+          "english": null,
+          "options": [
+            "Who teach you English?",
+            "Who taught you English?",
+            "Who did teach you English?",
+            "Who teached you English?"
+          ],
+          "correct": 1,
+          "hint": "whoが主語の疑問文はdoを使わない",
+          "explanation": "Whoが主語の場合、doを使わずに「Who + 動詞?」の形になります。teachの過去形はtaught。"
+        }
+      ]
+    },
+    {
+      "id": "g1-4",
+      "title": "現在進行形",
+      "grade": 1,
+      "questions": [
+        {
+          "question": "「私は今、椅子を作っています」を英語にすると？",
+          "english": null,
+          "options": [
+            "I making a chair now.",
+            "I make a chair now.",
+            "I am make a chair now.",
+            "I am making a chair now."
+          ],
+          "correct": 3,
+          "hint": "「今〜しています」はam/is/are + 動詞ing",
+          "explanation": "現在進行形は「am/is/are + 動詞ing」の形。「今〜している」という意味です。"
+        },
+        {
+          "question": "「彼女は今、木を切っています」を英語にすると？",
+          "english": null,
+          "options": [
+            "She is cut wood now.",
+            "She cutting wood now.",
+            "She is cutting wood now.",
+            "She cuts wood now."
+          ],
+          "correct": 2,
+          "hint": "Sheのbe動詞はis、cutにingをつける",
+          "explanation": "She is cutting wood. cutはcuttingになります（短母音+子音でtを重ねる）。"
+        },
+        {
+          "question": "次の文の意味は？「What are you doing?」",
+          "english": "What are you doing?",
+          "options": [
+            "あなたは何をしましたか？",
+            "あなたは何をするつもりですか？",
+            "あなたは何をしていますか？",
+            "あなたは何をしますか？"
+          ],
+          "correct": 2,
+          "hint": "are you doing = 現在進行形の疑問文",
+          "explanation": "What are you doing? は「あなたは今何をしていますか？」という現在進行形の疑問文です。"
+        },
+        {
+          "question": "「彼らは今、サッカーをしていません」を英語にすると？",
+          "english": null,
+          "options": [
+            "They are not playing soccer now.",
+            "They are not play soccer now.",
+            "They don't playing soccer now.",
+            "They not playing soccer now."
+          ],
+          "correct": 0,
+          "hint": "進行形の否定はbe動詞のあとにnot",
+          "explanation": "現在進行形の否定は「am/is/are + not + 動詞ing」です。"
+        },
+        {
+          "question": "「タカシは今、設計図を描いています」を英語にすると？",
+          "english": null,
+          "options": [
+            "Takashi draws a blueprint now.",
+            "Takashi is draw a blueprint now.",
+            "Takashi drawing a blueprint now.",
+            "Takashi is drawing a blueprint now."
+          ],
+          "correct": 3,
+          "hint": "drawのing形はdrawing",
+          "explanation": "Takashi is drawing a blueprint. drawはdrawingになります。blueprintは設計図。"
+        }
+      ]
+    },
+    {
+      "id": "g1-5",
+      "title": "一般動詞の過去形",
+      "grade": 1,
+      "questions": [
+        {
+          "question": "「私は昨日、棚を作りました」を英語にすると？",
+          "english": null,
+          "options": [
+            "I was make a shelf yesterday.",
+            "I made a shelf yesterday.",
+            "I make a shelf yesterday.",
+            "I maked a shelf yesterday."
+          ],
+          "correct": 1,
+          "hint": "makeの過去形は？（不規則変化）",
+          "explanation": "makeの過去形はmadeです。不規則動詞なので要注意！"
+        },
+        {
+          "question": "「彼は先週、英語を勉強しました」を英語にすると？",
+          "english": null,
+          "options": [
+            "He studied English last week.",
+            "He studyed English last week.",
+            "He was study English last week.",
+            "He study English last week."
+          ],
+          "correct": 0,
+          "hint": "studyの過去形は？（y→ied）",
+          "explanation": "studyの過去形はstudied。子音+yで終わる動詞はy→iedに変えます。"
+        },
+        {
+          "question": "「あなたは昨日どこに行きましたか？」を英語にすると？",
+          "english": null,
+          "options": [
+            "Where you went yesterday?",
+            "Where did you went yesterday?",
+            "Where did you go yesterday?",
+            "Where was you go yesterday?"
+          ],
+          "correct": 2,
+          "hint": "過去の疑問文はdidを使う、動詞は原形に戻る",
+          "explanation": "過去の疑問文はdid + 主語 + 動詞原形？の形。goはgoに戻ります（wentではない）。"
+        },
+        {
+          "question": "「私は昨日、宿題をしませんでした」を英語にすると？",
+          "english": null,
+          "options": [
+            "I didn't do my homework yesterday.",
+            "I don't did my homework yesterday.",
+            "I wasn't do my homework yesterday.",
+            "I not did my homework yesterday."
+          ],
+          "correct": 0,
+          "hint": "過去の否定文はdidn'tを使う",
+          "explanation": "過去の否定文はdidn't + 動詞原形です。"
+        },
+        {
+          "question": "次の文の意味は？「He cut the wood carefully.」",
+          "english": "He cut the wood carefully.",
+          "options": [
+            "彼は木を切りませんでした",
+            "彼は注意深く木を切ります",
+            "彼は木を切るつもりです",
+            "彼は注意深く木を切りました"
+          ],
+          "correct": 3,
+          "hint": "cutは現在形も過去形もcut（不規則動詞）",
+          "explanation": "cutは不規則動詞で過去形もcutです。carefullyは「注意深く」という副詞です。"
+        }
+      ]
+    }
+  ]
+}

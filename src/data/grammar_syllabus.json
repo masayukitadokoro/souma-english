@@ -1,0 +1,1524 @@
+{
+  "meta": {
+    "description": "文科省学習指導要領準拠 中学英語文法シラバス 75項目＋解説動画マッピング",
+    "channels": {
+      "naoeigo": "やり直し英語塾 ナオック",
+      "osaru": "イングリッシュおさる",
+      "stafuri": "スタフリ",
+      "sekimasao": "関正生 世界一わかりやすい",
+      "makino": "牧野English"
+    }
+  },
+  "grade1": [
+    {
+      "id": "g1-01",
+      "order": 1,
+      "title": "アルファベット・発音の基礎",
+      "cefr": "A1",
+      "description": "大文字・小文字、フォニックスの基礎",
+      "videos": [
+        {
+          "channel": "osaru",
+          "title": "【有料級】一撃でネイティブ発音になる喉発音5STEP",
+          "url": "https://www.youtube.com/watch?v=nkAO7i2EfSk",
+          "duration": "約12分"
+        }
+      ],
+      "example": "A, B, C... / cat, dog, pen"
+    },
+    {
+      "id": "g1-02",
+      "order": 2,
+      "title": "be動詞①（am/is/are）",
+      "cefr": "A1",
+      "description": "「〜です」「〜にいます」の基本",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "必須!be動詞の過去形の使い分け・一般動詞との違い―中学英作文⑮",
+          "url": "https://www.youtube.com/watch?v=hp384EYULng",
+          "duration": "約10分"
+        }
+      ],
+      "example": "I am Souma. / He is a carpenter."
+    },
+    {
+      "id": "g1-03",
+      "order": 3,
+      "title": "be動詞②（否定文・疑問文）",
+      "cefr": "A1",
+      "description": "am not / is not / are not / Are you〜?",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "be動詞の否定文と疑問文【中1英語③】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g1_03_a",
+          "duration": "10分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - be動詞②（否定文・疑問文）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=570s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "I am not a doctor. / Are you a student?"
+    },
+    {
+      "id": "g1-04",
+      "order": 4,
+      "title": "一般動詞①（肯定文）",
+      "cefr": "A1",
+      "description": "play, like, have などの動詞の使い方",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "必須!be動詞の過去形の使い分け・一般動詞との違い―中学英作文⑮",
+          "url": "https://www.youtube.com/watch?v=hp384EYULng",
+          "duration": "約10分"
+        }
+      ],
+      "example": "I play soccer. / She likes wood."
+    },
+    {
+      "id": "g1-05",
+      "order": 5,
+      "title": "一般動詞②（否定文・疑問文）",
+      "cefr": "A1",
+      "description": "don't / does not / Do you〜? / Does he〜?",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "一般動詞の否定・疑問文【中1英語⑤】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g1_05_a",
+          "duration": "10分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 一般動詞②（否定文・疑問文）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=570s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "I don't play baseball. / Do you like cats?"
+    },
+    {
+      "id": "g1-06",
+      "order": 6,
+      "title": "3人称単数現在（三単現のs）",
+      "cefr": "A1",
+      "description": "He/She/Itが主語のとき動詞に-(e)sをつける",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "否定文の使い分けはこう考えろ【三単現のsの否定文】―中学英作文⑧",
+          "url": "https://www.youtube.com/watch?v=PuUryvES_qA",
+          "duration": "約10分"
+        }
+      ],
+      "example": "He plays soccer. / She watches TV."
+    },
+    {
+      "id": "g1-07",
+      "order": 7,
+      "title": "疑問詞①（What / Who）",
+      "cefr": "A1",
+      "description": "「何」「誰」を使った疑問文",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "疑問詞 What / Who【中1英語⑦】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g1_07_a",
+          "duration": "10分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 疑問詞①（What / Who）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=632s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "What is this? / Who is she?"
+    },
+    {
+      "id": "g1-08",
+      "order": 8,
+      "title": "疑問詞②（When / Where / Why / How）",
+      "cefr": "A1",
+      "description": "「いつ」「どこ」「なぜ」「どのように」",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "疑問詞 When/Where/Why/How【中1英語⑧】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g1_08_a",
+          "duration": "12分"
+        },
+        {
+          "channel": "stafuri",
+          "title": "疑問詞をマスターしよう",
+          "url": "https://www.youtube.com/watch?v=placeholder_g1_08_b",
+          "duration": "10分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 疑問詞②（When / Where / Why / How）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=632s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "Where do you live? / Why do you study English?"
+    },
+    {
+      "id": "g1-09",
+      "order": 9,
+      "title": "代名詞（I / my / me / mine）",
+      "cefr": "A1",
+      "description": "主格・所有格・目的格・所有代名詞",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "きちんと使い分けできてる？英語には同じ「彼」にも何種類もの形がある【代名詞】―中学英作文⑨",
+          "url": "https://www.youtube.com/watch?v=SSzobtZh9oc",
+          "duration": "約10分"
+        }
+      ],
+      "example": "I / my / me / mine / He / his / him / his"
+    },
+    {
+      "id": "g1-10",
+      "order": 10,
+      "title": "指示代名詞（this / that / these / those）",
+      "cefr": "A1",
+      "description": "「これ」「あれ」「これら」「あれら」",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "this/that/these/those【中1英語⑩】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g1_10_a",
+          "duration": "8分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 指示代名詞（this / that / these / those）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=119s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "This is a hammer. / These are my tools."
+    },
+    {
+      "id": "g1-11",
+      "order": 11,
+      "title": "形容詞の使い方",
+      "cefr": "A1",
+      "description": "名詞を修飾する形容詞、be動詞の補語",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "関係代名詞と分詞の形容詞用法をいっぺんに復習しようー新中学61",
+          "url": "https://www.youtube.com/watch?v=z6--iK86bpU",
+          "duration": "約10分"
+        },
+        {
+          "channel": "osaru",
+          "title": "【一撃で覚えられる】形容詞66選【完全イメージ化】",
+          "url": "https://www.youtube.com/watch?v=uAY_nTmlgAg",
+          "duration": "約12分"
+        }
+      ],
+      "example": "This is a big hammer. / The wood is hard."
+    },
+    {
+      "id": "g1-12",
+      "order": 12,
+      "title": "副詞の使い方",
+      "cefr": "A1",
+      "description": "動詞・形容詞・他の副詞を修飾する副詞",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "絶対わかる！不定詞の副詞的用法- 中学英語講座⑮【新指導要領対応版】",
+          "url": "https://www.youtube.com/watch?v=xFYnd_tDoxw",
+          "duration": "約10分"
+        },
+        {
+          "channel": "osaru",
+          "title": "【完全イメージ化】ネイティブ感覚で英語がスッと身につく副詞完全攻略法",
+          "url": "https://www.youtube.com/watch?v=6SaEUFQCCfs",
+          "duration": "約12分"
+        }
+      ],
+      "example": "He works hard. / She runs very fast."
+    },
+    {
+      "id": "g1-13",
+      "order": 13,
+      "title": "現在進行形",
+      "cefr": "A1",
+      "description": "「今〜しています」am/is/are + 動詞ing",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "必ず〇〇〇で使え！現在進行形の作り方―中学英作文⑪",
+          "url": "https://www.youtube.com/watch?v=BdUv44SLvio",
+          "duration": "約10分"
+        }
+      ],
+      "example": "I am building a chair now."
+    },
+    {
+      "id": "g1-14",
+      "order": 14,
+      "title": "命令文・感嘆文",
+      "cefr": "A1",
+      "description": "「〜しなさい」「〜するな」「なんと〜！」",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "曲者注意！イレギュラーな文を復習[命令文・感嘆文・その他の文法]－中学英文法上級ドリル⑮",
+          "url": "https://www.youtube.com/watch?v=_2d1QDIeGto",
+          "duration": "約10分"
+        }
+      ],
+      "example": "Open the door. / Don't run. / What a beautiful house!"
+    },
+    {
+      "id": "g1-15",
+      "order": 15,
+      "title": "canの使い方",
+      "cefr": "A1",
+      "description": "「〜できる」能力・許可の表現",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "[初心者向け]助動詞canとwill[はじめからやり直し中学英語⑥]",
+          "url": "https://www.youtube.com/watch?v=3vWXCbvDo40",
+          "duration": "約10分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - canの使い方",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=5005s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "I can speak English. / Can you help me?"
+    },
+    {
+      "id": "g1-16",
+      "order": 16,
+      "title": "一般動詞の過去形①（規則動詞）",
+      "cefr": "A1",
+      "description": "動詞 + -ed の規則変化",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "規則動詞の過去形【中1英語⑯】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g1_16_a",
+          "duration": "10分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 一般動詞の過去形①（規則動詞）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=834s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "I played soccer. / She studied English."
+    },
+    {
+      "id": "g1-17",
+      "order": 17,
+      "title": "一般動詞の過去形②（不規則動詞）",
+      "cefr": "A1",
+      "description": "go→went, make→made など不規則変化",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "過去形を制する者は英会話を制す？過去形と不規則変化動詞―中学英作文⑬",
+          "url": "https://www.youtube.com/watch?v=tnGXihE4TH8",
+          "duration": "約10分"
+        }
+      ],
+      "example": "I made a shelf. / He went to the workshop."
+    },
+    {
+      "id": "g1-18",
+      "order": 18,
+      "title": "be動詞の過去形（was/were）",
+      "cefr": "A1",
+      "description": "「〜でした」「〜にいました」の過去",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "be動詞の過去形【中1英語⑱】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g1_18_a",
+          "duration": "9分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - be動詞の過去形（was/were）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=834s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "I was a student. / They were in the workshop."
+    },
+    {
+      "id": "g1-19",
+      "order": 19,
+      "title": "過去進行形",
+      "cefr": "A1",
+      "description": "「〜していました」was/were + 動詞ing",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "これはよく使う！過去進行形とその疑問文と否定文をマスターしよう―中学英作文⑯",
+          "url": "https://www.youtube.com/watch?v=QGhXmBHV65s",
+          "duration": "約10分"
+        }
+      ],
+      "example": "I was cutting wood at 3 PM."
+    },
+    {
+      "id": "g1-20",
+      "order": 20,
+      "title": "未来形①（will）",
+      "cefr": "A1",
+      "description": "「〜するつもり」「〜でしょう」will + 動詞原形",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "未来を表す文－willの使い方とその疑問文・否定文を使えるようになろう―中学英作文⑰",
+          "url": "https://www.youtube.com/watch?v=mExiKd-3Bks",
+          "duration": "約10分"
+        }
+      ],
+      "example": "I will be a carpenter. / It will rain tomorrow."
+    },
+    {
+      "id": "g1-21",
+      "order": 21,
+      "title": "未来形②（be going to）",
+      "cefr": "A1",
+      "description": "「〜するつもりだ」計画・予定の表現",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "ここはbe going toが妥当。willとbe going toの違いとは- 中学英語講座⑫【新指導要領対応版】",
+          "url": "https://www.youtube.com/watch?v=5X2bVr8jssY",
+          "duration": "約10分"
+        }
+      ],
+      "example": "I'm going to make a chair tomorrow."
+    },
+    {
+      "id": "g1-22",
+      "order": 22,
+      "title": "前置詞（in/on/at/to/for）",
+      "cefr": "A1",
+      "description": "場所・時間・方向を表す前置詞",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "前置詞がわかれば熟語は暗記不要だ【本当にできる人の勉強法】-be known+前置詞の場合",
+          "url": "https://www.youtube.com/watch?v=u_zMZigIdNU",
+          "duration": "約10分"
+        },
+        {
+          "channel": "osaru",
+          "title": "【絶対に定着する】前置詞44選【全イメージ図を配布】",
+          "url": "https://www.youtube.com/watch?v=cASKTXqZdOM",
+          "duration": "約12分"
+        }
+      ],
+      "example": "I am in the workshop. / at 3 o'clock / on Monday"
+    },
+    {
+      "id": "g1-23",
+      "order": 23,
+      "title": "接続詞（and/but/or/so/because）",
+      "cefr": "A1",
+      "description": "文や語をつなぐ接続詞の基礎",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "[注意!]英語の接続詞で日本人がやってしまいがちなミス- 中学英語講座⑬【新指導要領対応版】",
+          "url": "https://www.youtube.com/watch?v=JB8PTx5TQsQ",
+          "duration": "約10分"
+        }
+      ],
+      "example": "I like wood and nails. / I study English because I want to be a carpenter."
+    },
+    {
+      "id": "g1-24",
+      "order": 24,
+      "title": "名詞の複数形",
+      "cefr": "A1",
+      "description": "規則変化・不規則変化の複数形",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "名詞の複数形【中1英語㉔】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g1_24_a",
+          "duration": "8分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 名詞の複数形",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=2867s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "hammers / shelves / children / fish"
+    },
+    {
+      "id": "g1-25",
+      "order": 25,
+      "title": "There is / There are",
+      "cefr": "A1",
+      "description": "「〜があります/います」の表現",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "日本語で考えていたら解けない！There is/are～の文の本質－中学標準問題",
+          "url": "https://www.youtube.com/watch?v=w-JkdCObfhA",
+          "duration": "約10分"
+        }
+      ],
+      "example": "There is a hammer on the desk. / There are many trees."
+    }
+  ],
+  "grade2": [
+    {
+      "id": "g2-01",
+      "order": 1,
+      "title": "不定詞①（名詞的用法）",
+      "cefr": "A2",
+      "description": "「〜すること」to + 動詞原形が名詞の役割",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "【マジかよ...】want to＝「～したい」としか覚えてないとヤバい！",
+          "url": "https://www.youtube.com/watch?v=SrxMr5-Akp0",
+          "duration": "約10分"
+        }
+      ],
+      "example": "I want to be a carpenter. / To build is fun."
+    },
+    {
+      "id": "g2-02",
+      "order": 2,
+      "title": "不定詞②（副詞的用法）",
+      "cefr": "A2",
+      "description": "「〜するために」目的を表す不定詞",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "[初心者向け]不定詞②―副詞的用法[はじめからやり直し中学英語⑧]",
+          "url": "https://www.youtube.com/watch?v=bMoX4HWJczA",
+          "duration": "約10分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 不定詞②（副詞的用法）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=5761s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "I study English to be a carpenter."
+    },
+    {
+      "id": "g2-03",
+      "order": 3,
+      "title": "不定詞③（形容詞的用法）",
+      "cefr": "A2",
+      "description": "「〜するための」名詞を修飾する不定詞",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "[初心者向け]不定詞③―形容詞的用法[はじめからやり直し中学英語⑨]",
+          "url": "https://www.youtube.com/watch?v=hd6YSHLL_G8",
+          "duration": "約10分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 不定詞③（形容詞的用法）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=5761s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "I have something to build today."
+    },
+    {
+      "id": "g2-04",
+      "order": 4,
+      "title": "動名詞（〜ing）",
+      "cefr": "A2",
+      "description": "「〜すること」動詞のing形が名詞の役割",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "前置詞＋動名詞(ing)の組み合わせに慣れれば言えることが倍増する！-中学上級問題㉓",
+          "url": "https://www.youtube.com/watch?v=C56ueArP72s",
+          "duration": "約10分"
+        }
+      ],
+      "example": "Building things is fun. / I enjoy making shelves."
+    },
+    {
+      "id": "g2-05",
+      "order": 5,
+      "title": "助動詞①（must / have to）",
+      "cefr": "A2",
+      "description": "「〜しなければならない」義務の表現",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "mustとhave toは意味が違う「～しなければならない」の使い分け-中学英語講座⑱【新指導要領対応版】",
+          "url": "https://www.youtube.com/watch?v=09X4c0XjE8A",
+          "duration": "約10分"
+        }
+      ],
+      "example": "You must wear gloves. / I have to study English."
+    },
+    {
+      "id": "g2-06",
+      "order": 6,
+      "title": "助動詞②（should / may / might）",
+      "cefr": "A2",
+      "description": "「〜すべき」「〜かもしれない」の表現",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "should/may/mightの使い方【中2英語⑥】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g2_06_a",
+          "duration": "11分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 助動詞②（should / may / might）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=5463s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "You should measure twice. / It may rain tomorrow."
+    },
+    {
+      "id": "g2-07",
+      "order": 7,
+      "title": "比較①（原級・比較級）",
+      "cefr": "A2",
+      "description": "「〜より〜だ」-er / more〜の使い方",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "日本人めっちゃできない！[couldn’t 比較級]の文の理解の仕方",
+          "url": "https://www.youtube.com/watch?v=o5MJ7Mt2h2o",
+          "duration": "約10分"
+        }
+      ],
+      "example": "This hammer is heavier than that one."
+    },
+    {
+      "id": "g2-08",
+      "order": 8,
+      "title": "比較②（最上級）",
+      "cefr": "A2",
+      "description": "「最も〜だ」-est / most〜の使い方",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "苦手な人多数の【ever×最上級】をマスターできればかっこいいー中学上級問題⑮",
+          "url": "https://www.youtube.com/watch?v=FZCMZAYkfXs",
+          "duration": "約10分"
+        }
+      ],
+      "example": "This is the most beautiful shrine in Japan."
+    },
+    {
+      "id": "g2-09",
+      "order": 9,
+      "title": "比較③（as〜as）",
+      "cefr": "A2",
+      "description": "「〜と同じくらい〜だ」同等比較",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "as〜asの使い方【中2英語⑨】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g2_09_a",
+          "duration": "9分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 比較③（as〜as）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=6169s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "This wood is as hard as metal."
+    },
+    {
+      "id": "g2-10",
+      "order": 10,
+      "title": "接続詞②（when/if/that/while）",
+      "cefr": "A2",
+      "description": "「〜する時」「もし〜なら」などの従属接続詞",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "従属接続詞【中2英語⑩】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g2_10_a",
+          "duration": "11分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 接続詞②（when/if/that/while）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=3600s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "When I grow up, I will be a carpenter. / If you practice, you will improve."
+    },
+    {
+      "id": "g2-11",
+      "order": 11,
+      "title": "受動態①（基本形）",
+      "cefr": "A2",
+      "description": "「〜される/された」be動詞 + 過去分詞",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "受け身はどれ？受動態を文法用語ゼロで解説してみた",
+          "url": "https://www.youtube.com/watch?v=0ncJc6lhwN0",
+          "duration": "約10分"
+        }
+      ],
+      "example": "This house was built 100 years ago."
+    },
+    {
+      "id": "g2-12",
+      "order": 12,
+      "title": "受動態②（否定・疑問）",
+      "cefr": "A2",
+      "description": "受動態の否定文・疑問文",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "受動態の否定・疑問文【中2英語⑫】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g2_12_a",
+          "duration": "9分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 受動態②（否定・疑問）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=570s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "Was this house built in Japan? / It was not made by hand."
+    },
+    {
+      "id": "g2-13",
+      "order": 13,
+      "title": "現在完了形①（経験）",
+      "cefr": "A2",
+      "description": "「〜したことがある」have/has + 過去分詞",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "現在完了形・経験【中2英語⑬】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g2_13_a",
+          "duration": "11分"
+        },
+        {
+          "channel": "makino",
+          "title": "現在完了形を使いこなす",
+          "url": "https://www.youtube.com/watch?v=placeholder_g2_13_b",
+          "duration": "12分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 現在完了形①（経験）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=4241s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "I have visited a shrine three times."
+    },
+    {
+      "id": "g2-14",
+      "order": 14,
+      "title": "現在完了形②（完了・結果）",
+      "cefr": "A2",
+      "description": "「〜し終えた」「〜してしまった」の完了用法",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "現在完了形・完了【中2英語⑭】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g2_14_a",
+          "duration": "10分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 現在完了形②（完了・結果）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=4241s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "I have just finished making the shelf."
+    },
+    {
+      "id": "g2-15",
+      "order": 15,
+      "title": "現在完了形③（継続）",
+      "cefr": "A2",
+      "description": "「ずっと〜している」for/since との組み合わせ",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "現在完了形・継続【中2英語⑮】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g2_15_a",
+          "duration": "10分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 現在完了形③（継続）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=4241s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "I have studied English for two years."
+    },
+    {
+      "id": "g2-16",
+      "order": 16,
+      "title": "関係代名詞①（who）",
+      "cefr": "A2",
+      "description": "人を修飾する関係代名詞who",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "関係代名詞who【中2英語⑯】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g2_16_a",
+          "duration": "11分"
+        },
+        {
+          "channel": "osaru",
+          "title": "関係代名詞を完全攻略",
+          "url": "https://www.youtube.com/watch?v=placeholder_g2_16_b",
+          "duration": "14分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 関係代名詞①（who）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=6525s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "The carpenter who built this house is famous."
+    },
+    {
+      "id": "g2-17",
+      "order": 17,
+      "title": "関係代名詞②（which/that）",
+      "cefr": "A2",
+      "description": "物・事を修飾する関係代名詞",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "関係代名詞which/that【中2英語⑰】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g2_17_a",
+          "duration": "11分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 関係代名詞②（which/that）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=6537s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "The tool that he uses is very expensive."
+    },
+    {
+      "id": "g2-18",
+      "order": 18,
+      "title": "間接疑問文",
+      "cefr": "A2",
+      "description": "「〜かどうか/何かを知っている」の表現",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "【徹底演習!】使いこなせ、間接疑問文ー新中学㊶",
+          "url": "https://www.youtube.com/watch?v=XVmN7FuvUHg",
+          "duration": "約10分"
+        }
+      ],
+      "example": "I don't know what time he will come."
+    },
+    {
+      "id": "g2-19",
+      "order": 19,
+      "title": "付加疑問文",
+      "cefr": "A2",
+      "description": "「〜ですよね？」の確認表現",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "「はい」がNoで「いいえ」がYes?－もう迷わない！付加疑問文を攻略する方法【中学標準問題】",
+          "url": "https://www.youtube.com/watch?v=GnNg6ULlpQY",
+          "duration": "約10分"
+        }
+      ],
+      "example": "You are a carpenter, aren't you?"
+    },
+    {
+      "id": "g2-20",
+      "order": 20,
+      "title": "感嘆文（How / What）",
+      "cefr": "A2",
+      "description": "「なんと〜でしょう！」の感嘆表現",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "曲者注意！イレギュラーな文を復習[命令文・感嘆文・その他の文法]－中学英文法上級ドリル⑮",
+          "url": "https://www.youtube.com/watch?v=_2d1QDIeGto",
+          "duration": "約10分"
+        }
+      ],
+      "example": "What a beautiful shrine! / How amazing this is!"
+    },
+    {
+      "id": "g2-21",
+      "order": 21,
+      "title": "It is 〜 to ...（形式主語）",
+      "cefr": "A2",
+      "description": "「〜することは…だ」itを仮の主語に使う",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "形式主語itの使い方【中2英語㉑】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g2_21_a",
+          "duration": "10分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - It is 〜 to ...（形式主語）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=5761s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "It is important to practice every day."
+    },
+    {
+      "id": "g2-22",
+      "order": 22,
+      "title": "SVOOとSVOC",
+      "cefr": "A2",
+      "description": "第4・第5文型の基礎",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "【疑問】人モノとモノto人は本当に同じなのか？第3文型と第4文型の書き換えについて考察してみた",
+          "url": "https://www.youtube.com/watch?v=skwmli0gypA",
+          "duration": "約10分"
+        }
+      ],
+      "example": "He taught me English. / We call him Souma."
+    },
+    {
+      "id": "g2-23",
+      "order": 23,
+      "title": "tell/ask/want + 人 + to〜",
+      "cefr": "A2",
+      "description": "「〜に…するように言う/頼む/望む」",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "tell/ask/want+人+to〜【中2英語㉓】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g2_23_a",
+          "duration": "10分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - tell/ask/want + 人 + to〜",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=5761s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "He told me to cut the wood carefully."
+    },
+    {
+      "id": "g2-24",
+      "order": 24,
+      "title": "原形不定詞（let/make/help）",
+      "cefr": "A2",
+      "description": "「〜させる/〜するのを手伝う」使役・知覚動詞",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "使役動詞の使い方【中2英語㉔】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g2_24_a",
+          "duration": "10分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 原形不定詞（let/make/help）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=5761s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "Let me help you. / My father made me study."
+    },
+    {
+      "id": "g2-25",
+      "order": 25,
+      "title": "〜ing（現在分詞）の形容詞的用法",
+      "cefr": "A2",
+      "description": "名詞を後ろから修飾する現在分詞",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "現在分詞の形容詞的用法【中2英語㉕】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g2_25_a",
+          "duration": "9分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 〜ing（現在分詞）の形容詞的用法",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=5761s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "The man building the house is my father."
+    }
+  ],
+  "grade3": [
+    {
+      "id": "g3-01",
+      "order": 1,
+      "title": "仮定法①（if + 過去形）",
+      "cefr": "B1",
+      "description": "「もし〜なら…するのに」現実に反する仮定",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "【使えたら相当カッコいい】ifのない仮定法を文法用語ゼロで説明してみたー仮定法②",
+          "url": "https://www.youtube.com/watch?v=TILXwVhOmE0",
+          "duration": "約10分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中3英語が一気にわかる！否定疑問文から仮定法まで基礎から全部解説",
+          "url": "https://www.youtube.com/watch?v=FLcHFQJ8rxk",
+          "duration": "約12分"
+        }
+      ],
+      "example": "If I could speak English, I could work abroad."
+    },
+    {
+      "id": "g3-02",
+      "order": 2,
+      "title": "仮定法②（I wish〜）",
+      "cefr": "B1",
+      "description": "「〜だったらいいのに」願望の仮定法",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "【使えたら相当カッコいい】ifのない仮定法を文法用語ゼロで説明してみたー仮定法②",
+          "url": "https://www.youtube.com/watch?v=TILXwVhOmE0",
+          "duration": "約10分"
+        }
+      ],
+      "example": "I wish I could speak English fluently."
+    },
+    {
+      "id": "g3-03",
+      "order": 3,
+      "title": "現在完了進行形",
+      "cefr": "B1",
+      "description": "「ずっと〜し続けている」have been 動詞ing",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "超理解！未来完了形・完了進行形・現在完了進行形！",
+          "url": "https://www.youtube.com/watch?v=snVkvnI5qzA",
+          "duration": "約10分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 現在完了進行形",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=4241s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "I have been studying English for three years."
+    },
+    {
+      "id": "g3-04",
+      "order": 4,
+      "title": "過去完了形",
+      "cefr": "B1",
+      "description": "「〜していた/〜したことがあった」had + 過去分詞",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "過去完了形－大過去って何？いつ使うの？(大過去編)",
+          "url": "https://www.youtube.com/watch?v=lhW0y0n5qBM",
+          "duration": "約10分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 過去完了形",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=4241s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "He had already left when I arrived."
+    },
+    {
+      "id": "g3-05",
+      "order": 5,
+      "title": "関係副詞（where/when/why）",
+      "cefr": "B1",
+      "description": "場所・時・理由を示す関係副詞",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "関係副詞【中3英語⑤】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g3_05_a",
+          "duration": "11分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 関係副詞（where/when/why）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=6525s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "This is the town where I was born."
+    },
+    {
+      "id": "g3-06",
+      "order": 6,
+      "title": "関係代名詞の省略",
+      "cefr": "B1",
+      "description": "目的格の関係代名詞は省略できる",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "関係代名詞の省略【中3英語⑥】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g3_06_a",
+          "duration": "9分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 関係代名詞の省略",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=6537s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "The book (that) I read was amazing."
+    },
+    {
+      "id": "g3-07",
+      "order": 7,
+      "title": "分詞構文",
+      "cefr": "B1",
+      "description": "「〜しながら」「〜して」動詞のing形で副詞句",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "[保存版]この一本で分詞構文の基礎は完璧！-分詞構文ガチ解説",
+          "url": "https://www.youtube.com/watch?v=f1FLtOiivJM",
+          "duration": "約10分"
+        }
+      ],
+      "example": "Walking to school, I met a carpenter."
+    },
+    {
+      "id": "g3-08",
+      "order": 8,
+      "title": "受動態の応用（助動詞・完了形）",
+      "cefr": "B1",
+      "description": "will be done / has been done などの応用",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "受動態の応用【中3英語⑧】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g3_08_a",
+          "duration": "11分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 受動態の応用（助動詞・完了形）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=570s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "This shrine will be repaired next year."
+    },
+    {
+      "id": "g3-09",
+      "order": 9,
+      "title": "名詞節（that節）",
+      "cefr": "B1",
+      "description": "「〜ということ」thatが導く節",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "that節の使い方【中3英語⑨】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g3_09_a",
+          "duration": "10分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 名詞節（that節）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=3600s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "I think that English is important."
+    },
+    {
+      "id": "g3-10",
+      "order": 10,
+      "title": "疑問詞 + 不定詞",
+      "cefr": "B1",
+      "description": "「何を〜すべきか」「どこで〜すべきか」",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "疑問詞+不定詞【中3英語⑩】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g3_10_a",
+          "duration": "10分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 疑問詞 + 不定詞",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=5761s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "I don't know what to do. / Tell me how to use this tool."
+    },
+    {
+      "id": "g3-11",
+      "order": 11,
+      "title": "too〜to... / 〜enough to",
+      "cefr": "B1",
+      "description": "「〜すぎて…できない」「…するほど〜だ」",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "too〜to/〜enough to【中3英語⑪】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g3_11_a",
+          "duration": "9分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - too〜to... / 〜enough to",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=5761s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "This wood is too heavy to carry. / He is strong enough to lift it."
+    },
+    {
+      "id": "g3-12",
+      "order": 12,
+      "title": "so〜that... / such〜that...",
+      "cefr": "B1",
+      "description": "「とても〜なので…」結果の表現",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "so〜that/such〜that【中3英語⑫】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g3_12_a",
+          "duration": "10分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - so〜that... / such〜that...",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=3600s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "He worked so hard that he finished the shrine."
+    },
+    {
+      "id": "g3-13",
+      "order": 13,
+      "title": "否定語（hardly / scarcely / seldom）",
+      "cefr": "B1",
+      "description": "「ほとんど〜ない」準否定語",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "準否定語の使い方【中3英語⑬】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g3_13_a",
+          "duration": "9分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 否定語（hardly / scarcely / seldom）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=570s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "He hardly uses nails in his work."
+    },
+    {
+      "id": "g3-14",
+      "order": 14,
+      "title": "倒置・強調構文",
+      "cefr": "B1",
+      "description": "「〜こそが…だ」It is〜that...強調構文",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "強調構文【中3英語⑭】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g3_14_a",
+          "duration": "11分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 倒置・強調構文",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=3600s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "It is English that I need to master."
+    },
+    {
+      "id": "g3-15",
+      "order": 15,
+      "title": "会話表現①（同意・反応）",
+      "cefr": "B1",
+      "description": "「そうですね」「本当ですか」などの会話フレーズ",
+      "videos": [
+        {
+          "channel": "makino",
+          "title": "英語の会話表現①【中3英語⑮】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g3_15_a",
+          "duration": "10分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 会話表現①（同意・反応）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=0s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "I see. / Really? / That's amazing! / Me too."
+    },
+    {
+      "id": "g3-16",
+      "order": 16,
+      "title": "会話表現②（依頼・提案）",
+      "cefr": "B1",
+      "description": "「〜してもらえますか」「〜しましょうか」",
+      "videos": [
+        {
+          "channel": "makino",
+          "title": "英語の依頼・提案表現【中3英語⑯】",
+          "url": "https://www.youtube.com/watch?v=placeholder_g3_16_a",
+          "duration": "10分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 会話表現②（依頼・提案）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=0s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "Could you show me how to use this? / Shall I help you?"
+    },
+    {
+      "id": "g3-17",
+      "order": 17,
+      "title": "長文読解の技法①（main idea）",
+      "cefr": "B1",
+      "description": "段落の要旨・主題を素早く読み取る技術",
+      "videos": [
+        {
+          "channel": "sekimasao",
+          "title": "英語長文の読み方①",
+          "url": "https://www.youtube.com/watch?v=placeholder_g3_17_a",
+          "duration": "15分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 長文読解の技法①（main idea）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=3600s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "スキャニング・スキミングの技術"
+    },
+    {
+      "id": "g3-18",
+      "order": 18,
+      "title": "長文読解の技法②（接続詞で構造把握）",
+      "cefr": "B1",
+      "description": "however/therefore/in additionなどで文章構造を読む",
+      "videos": [
+        {
+          "channel": "sekimasao",
+          "title": "英語長文の読み方②",
+          "url": "https://www.youtube.com/watch?v=placeholder_g3_18_a",
+          "duration": "15分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 長文読解の技法②（接続詞で構造把握）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=3600s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "However, therefore, in addition, as a result"
+    },
+    {
+      "id": "g3-19",
+      "order": 19,
+      "title": "英作文の基礎①（語順）",
+      "cefr": "B1",
+      "description": "英語の基本語順SVO・語順の重要性",
+      "videos": [
+        {
+          "channel": "naoeigo",
+          "title": "未来を表す文－willの使い方とその疑問文・否定文を使えるようになろう―中学英作文⑰",
+          "url": "https://www.youtube.com/watch?v=mExiKd-3Bks",
+          "duration": "約10分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 英作文の基礎①（語順）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=119s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "S + V + O / S + V + C の基本構造"
+    },
+    {
+      "id": "g3-20",
+      "order": 20,
+      "title": "英作文の基礎②（つなぎ言葉）",
+      "cefr": "B1",
+      "description": "First/Next/Finally/Howeverなどの接続表現",
+      "videos": [
+        {
+          "channel": "osaru",
+          "title": "英作文のつなぎ言葉",
+          "url": "https://www.youtube.com/watch?v=placeholder_g3_20_a",
+          "duration": "10分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 英作文の基礎②（つなぎ言葉）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=3600s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "First... / In addition... / As a result... / In conclusion..."
+    },
+    {
+      "id": "g3-21",
+      "order": 21,
+      "title": "リスニング技法（聞き取りのコツ）",
+      "cefr": "B1",
+      "description": "キーワードに集中・メモ取り・予測の技術",
+      "videos": [
+        {
+          "channel": "osaru",
+          "title": "【英語リスニングが苦手な人必見！】耳が英語を“勝手に理解する”魔法のリスニングワーク",
+          "url": "https://www.youtube.com/watch?v=2VQzQ_AWKIE",
+          "duration": "約12分"
+        }
+      ],
+      "example": "リスニングの5つのコツ"
+    },
+    {
+      "id": "g3-22",
+      "order": 22,
+      "title": "スピーキング①（自己紹介）",
+      "cefr": "B1",
+      "description": "名前・出身・趣味・夢を英語で話す",
+      "videos": [
+        {
+          "channel": "osaru",
+          "title": "【必ず使う！】自己紹介で使う英語フレーズ50選",
+          "url": "https://www.youtube.com/watch?v=kBXOV_hAoEw",
+          "duration": "約12分"
+        }
+      ],
+      "example": "My name is... / I'm from... / I like... / My dream is..."
+    },
+    {
+      "id": "g3-23",
+      "order": 23,
+      "title": "スピーキング②（意見を述べる）",
+      "cefr": "B1",
+      "description": "「私は〜だと思います、なぜなら〜」の表現",
+      "videos": [
+        {
+          "channel": "makino",
+          "title": "英語で意見を述べる",
+          "url": "https://www.youtube.com/watch?v=placeholder_g3_23_a",
+          "duration": "11分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - スピーキング②（意見を述べる）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=0s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "I think that... because... / In my opinion..."
+    },
+    {
+      "id": "g3-24",
+      "order": 24,
+      "title": "英検3級レベルの総復習",
+      "cefr": "B1",
+      "description": "英検3級に向けた中学英語の総まとめ",
+      "videos": [
+        {
+          "channel": "osaru",
+          "title": "英検3級完全攻略",
+          "url": "https://www.youtube.com/watch?v=placeholder_g3_24_a",
+          "duration": "20分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 英検3級レベルの総復習",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=0s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "英検3級の頻出文法・表現まとめ"
+    },
+    {
+      "id": "g3-25",
+      "order": 25,
+      "title": "実践英会話（職人・ものづくり英語）",
+      "cefr": "B1",
+      "description": "大工・職人・ものづくりで使う実践英語",
+      "videos": [
+        {
+          "channel": "makino",
+          "title": "ものづくり・職人の英語表現",
+          "url": "https://www.youtube.com/watch?v=placeholder_g3_25_a",
+          "duration": "12分"
+        },
+        {
+          "channel": "osaru",
+          "title": "中学英語完全攻略 - 実践英会話（職人・ものづくり英語）",
+          "url": "https://www.youtube.com/watch?v=-d-CgIl1ce4&t=0s",
+          "duration": "該当箇所へジャンプ"
+        }
+      ],
+      "example": "How do you use this tool? / What material is this made of?"
+    }
+  ]
+}

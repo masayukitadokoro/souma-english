@@ -30,7 +30,7 @@ export default function SignupPage() {
     }
 
     if (data.user) {
-      router.push('/onboarding')
+      router.push('/study-log')
     }
   }
 

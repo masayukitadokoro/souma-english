@@ -197,7 +197,7 @@ export default function SpellingPracticePage() {
                   <input value={input} onChange={e => setInput(e.target.value)}
                     onKeyDown={e => e.key === 'Enter' && input.trim() && check()}
                     placeholder="英語のスペルを入力..."
-                    autoFocus autoComplete="off"
+                    autoFocus autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck={false}
                     className="w-full p-4 border-2 border-gray-200 rounded-xl text-xl text-center focus:border-indigo-500 focus:outline-none bg-gray-50 transition-all" />
                   <button onClick={check} disabled={!input.trim()}
                     className="w-full mt-3 py-3.5 bg-indigo-500 hover:bg-indigo-600 text-white rounded-xl text-base font-bold disabled:opacity-40 transition-all active:scale-[0.98]">

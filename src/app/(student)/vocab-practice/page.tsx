@@ -208,7 +208,7 @@ export default function VocabPracticePage() {
                   <input value={input} onChange={e => setInput(e.target.value)}
                     onKeyDown={e => e.key === 'Enter' && input.trim() && check()}
                     placeholder="日本語の意味を入力..."
-                    autoFocus autoComplete="off"
+                    autoFocus autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck={false}
                     className="w-full p-4 border-2 border-gray-200 rounded-xl text-xl text-center focus:border-emerald-500 focus:outline-none bg-gray-50 transition-all" />
                   <button onClick={check} disabled={!input.trim()}
                     className="w-full mt-3 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl text-base font-bold disabled:opacity-40 transition-all active:scale-[0.98]">

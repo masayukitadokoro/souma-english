@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import TestDrill from '@/components/TestDrill'
+import { supabase } from '@/lib/supabase'
 import { CheckCircle } from 'lucide-react'
 
 const CHANNEL_NAME = 'drill-completion'
@@ -22,7 +23,29 @@ export default function DrillPage() {
     }
   }, [])
 
-  const handleDrillComplete = () => {
+  const handleDrillComplete = async () => {
+    // Supabaseに保存
+    try {
+      const { data: { user } } = await supabase.auth.getUser()
+      if (user && drillData) {
+        const wa = drillData.wrongAnswers?.[0]
+        await supabase.from('drill_records').insert({
+          user_id: user.id,
+          answer_id: drillData.answerId || null,
+          session_id: drillData.sessionId || null,
+          drill_mode: drillData.initialMode || 'unknown',
+          question_text: wa?.question_text || '',
+          question_text_jp: wa?.question_text_jp || '',
+          correct_answer: wa?.correct_answer || '',
+          question_type: wa?.question_type || '',
+          category: wa?.category || '',
+          test_score: drillData.testScore || null,
+          correct_count: 0,
+          total_count: 0,
+        })
+      }
+    } catch (e) { console.error('Failed to save drill record:', e) }
+
     // BroadcastChannelで元タブに通知
     try {
       const channel = new BroadcastChannel(CHANNEL_NAME)
@@ -35,7 +58,7 @@ export default function DrillPage() {
       channel.close()
     } catch {}
 
-    // localStorageにドリルモード別の完了状態を保存
+    // localStorageにも保存（フォールバック）
     try {
       const completedMap = JSON.parse(localStorage.getItem('drill_completed') || '{}')
       if (drillData?.answerId && drillData?.initialMode) {
@@ -49,20 +72,8 @@ export default function DrillPage() {
   }
 
   const handleClose = () => {
-    if (completed) {
-      // ドリル完了後に閉じる場合
-      window.close()
-      // window.close()が効かない場合のフォールバック
-      setTimeout(() => {
-        setCompleted(true) // 閉じれなかった場合は完了画面を維持
-      }, 500)
-    } else {
-      window.close()
-      setTimeout(() => {
-        // 閉じれなかった場合
-        window.history.back()
-      }, 500)
-    }
+    window.close()
+    setTimeout(() => { window.history.back() }, 500)
   }
 
   if (error) {
@@ -70,9 +81,7 @@ export default function DrillPage() {
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
         <div className="bg-white rounded-2xl p-8 text-center max-w-sm shadow-sm">
           <p className="text-gray-600 mb-4">{error}</p>
-          <button onClick={() => window.close()} className="px-6 py-2 bg-indigo-500 text-white rounded-xl font-bold">
-            閉じる
-          </button>
+          <button onClick={() => window.close()} className="px-6 py-2 bg-indigo-500 text-white rounded-xl font-bold">閉じる</button>
         </div>
       </div>
     )
@@ -92,7 +101,7 @@ export default function DrillPage() {
         <div className="bg-white rounded-2xl p-8 text-center max-w-sm shadow-sm">
           <CheckCircle size={48} className="text-emerald-500 mx-auto mb-4" />
           <h2 className="text-xl font-bold text-gray-800 mb-2">ドリル完了！</h2>
-          <p className="text-sm text-gray-500 mb-6">元のタブに結果が反映されました</p>
+          <p className="text-sm text-gray-500 mb-6">学習記録に保存されました</p>
           <button onClick={handleClose} className="w-full py-3 bg-indigo-500 hover:bg-indigo-600 text-white rounded-xl font-bold transition-colors">
             このタブを閉じる
           </button>

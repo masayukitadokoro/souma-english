@@ -34,7 +34,7 @@ function buildTodayMenu(vocabStats: any, grammarStats: any, masteredGrammarIds: 
   }
 
   const weakest = diagnostic
-    ? ([...['vocab', 'grammar', 'reading'] as const].sort((a, b) => {
+    ? (['vocab', 'grammar', 'reading'] as const).slice().sort((a, b) => {
         const m = { vocab: diagnostic.vocab_score, grammar: diagnostic.grammar_score, reading: diagnostic.reading_score }
         return m[a] - m[b]
       })[0]

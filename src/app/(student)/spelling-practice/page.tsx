@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
 import { isEnglishAnswerCorrect } from '@/lib/answer-check'
+import { awardSpellingPoints, checkAndAwardDailyBonuses, checkAndAwardStreakBonuses } from '@/lib/points'
+import { showPointToast } from '@/components/PointToast'
 import { Volume2, CheckCircle, XCircle, ArrowLeft, Keyboard, Trophy, RotateCcw } from 'lucide-react'
 
 function shuffle<T>(arr: T[]): T[] {
@@ -104,6 +106,15 @@ export default function SpellingPracticePage() {
         duration_seconds: dur,
       })
     } catch (e) { console.error('Failed to save:', e) }
+    // ─── ポイント付与 ───
+    try {
+      const ptResults = await awardSpellingPoints(level, correctCount, questions.length)
+      ptResults.forEach(r => { if (r.awarded) showPointToast(r.pts, r.type === 'spelling_complete' ? 'スペル練習完了' : 'レベルクリア！') })
+      const dailyB = await checkAndAwardDailyBonuses()
+      dailyB.forEach(r => { if (r.awarded) showPointToast(r.pts, r.type) })
+      const streakB = await checkAndAwardStreakBonuses()
+      streakB.forEach(r => { if (r.awarded) showPointToast(r.pts, r.type) })
+    } catch (e) { console.error('Point award error:', e) }
   }
 
   const q = questions[idx]

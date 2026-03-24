@@ -2,6 +2,8 @@
 import { useEffect, useState } from 'react'
 import TestDrill from '@/components/TestDrill'
 import { supabase } from '@/lib/supabase'
+import { awardDrillPoints, checkAndAwardDailyBonuses, checkAndAwardStreakBonuses } from '@/lib/points'
+import { showPointToast } from '@/components/PointToast'
 import { CheckCircle } from 'lucide-react'
 
 const CHANNEL_NAME = 'drill-completion'
@@ -67,6 +69,14 @@ export default function DrillPage() {
         localStorage.setItem('drill_completed', JSON.stringify(completedMap))
       }
     } catch {}
+
+    // ─── ポイント付与 ───
+    const drillPt = await awardDrillPoints(drillData?.answerId || drillData?.initialMode || 'drill')
+    if (drillPt.awarded) showPointToast(drillPt.points, 'ドリル完了')
+    const dailyB = await checkAndAwardDailyBonuses()
+    dailyB.forEach(r => { if (r.awarded) showPointToast(r.pts, r.type) })
+    const streakB = await checkAndAwardStreakBonuses()
+    streakB.forEach(r => { if (r.awarded) showPointToast(r.pts, r.type) })
 
     setCompleted(true)
   }

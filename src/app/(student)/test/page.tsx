@@ -2,6 +2,8 @@
 import { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
+import { awardTestPoints, checkAndAwardDailyBonuses, checkAndAwardStreakBonuses } from '@/lib/points'
+import { showPointToast } from '@/components/PointToast'
 
 // ─── 設定 ───
 const Q_DIST = { multiple_choice: 8, fill_blank: 7, vocab: 6, writing: 4 }
@@ -248,6 +250,14 @@ export default function TestPage() {
     await supabase.from('test_sessions').update({
       total_score: totalScore, passed, completed_at: new Date().toISOString(), weakness_analysis: analysis,
     }).eq('id', sessionId)
+
+    // ─── ポイント付与 ───
+    const ptResults = await awardTestPoints(sessionId, totalScore)
+    ptResults.forEach(r => { if (r.awarded) showPointToast(r.pts, r.type === 'test_complete' ? 'テスト受験' : 'スコアボーナス') })
+    const dailyB = await checkAndAwardDailyBonuses()
+    dailyB.forEach(r => { if (r.awarded) showPointToast(r.pts, r.type) })
+    const streakB = await checkAndAwardStreakBonuses()
+    streakB.forEach(r => { if (r.awarded) showPointToast(r.pts, r.type) })
 
     const updates: any = {
       total_tests_taken: (progress?.total_tests_taken || 0) + 1,

@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
 import { isJapaneseAnswerCorrect } from '@/lib/answer-check'
+import { awardVocabPoints, checkAndAwardDailyBonuses, checkAndAwardStreakBonuses } from '@/lib/points'
+import { showPointToast } from '@/components/PointToast'
 import { Volume2, CheckCircle, XCircle, ArrowLeft, BookOpen, Trophy, RotateCcw } from 'lucide-react'
 
 function shuffle<T>(arr: T[]): T[] {
@@ -111,6 +113,15 @@ export default function VocabPracticePage() {
         duration_seconds: dur,
       })
     } catch (e) { console.error('Failed to save:', e) }
+    // ─── ポイント付与 ───
+    try {
+      const ptResults = await awardVocabPoints(level, correctCount, questions.length)
+      ptResults.forEach(r => { if (r.awarded) showPointToast(r.pts, r.type === 'vocab_complete' ? '単語練習完了' : 'レベルクリア！') })
+      const dailyB = await checkAndAwardDailyBonuses()
+      dailyB.forEach(r => { if (r.awarded) showPointToast(r.pts, r.type) })
+      const streakB = await checkAndAwardStreakBonuses()
+      streakB.forEach(r => { if (r.awarded) showPointToast(r.pts, r.type) })
+    } catch (e) { console.error('Point award error:', e) }
   }
 
   const q = questions[idx]

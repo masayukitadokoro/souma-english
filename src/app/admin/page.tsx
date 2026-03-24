@@ -2,14 +2,14 @@
 import { useEffect, useState, useMemo } from 'react'
 import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
-import { ArrowLeft, Users, Clock, Hash, TrendingUp, BookOpen, ShieldCheck, ChevronRight } from 'lucide-react'
+import { ArrowLeft, Users, Clock, Hash, TrendingUp, BookOpen, ShieldCheck, ChevronRight, Coins } from 'lucide-react'
 
 const ADMIN_EMAILS = ['masa@unicornfarm.co', 'moe7120028@gmail.com']
 
 type UserSummary = {
   id: string; email: string; created_at: string; last_active: string | null;
   total_drills: number; total_seconds: number; total_questions: number;
-  total_correct: number; test_count: number; test_pct: number;
+  total_correct: number; test_count: number; test_pct: number; monthly_points: number;
 }
 type DrillRecord = {
   id: string; drill_mode: string; question_text: string; correct_count: number;
@@ -77,7 +77,7 @@ export default function AdminPage() {
   const [token, setToken] = useState('')
   const [users, setUsers] = useState<UserSummary[]>([])
   const [selectedUser, setSelectedUser] = useState<UserSummary | null>(null)
-  const [detail, setDetail] = useState<{ drillRecords: DrillRecord[]; testSessions: TestSession[] } | null>(null)
+  const [detail, setDetail] = useState<{ drillRecords: DrillRecord[]; testSessions: TestSession[]; pointEvents: any[] } | null>(null)
   const [detailLoading, setDetailLoading] = useState(false)
 
   // 認証チェック
@@ -160,6 +160,43 @@ export default function AdminPage() {
       modeStats[r.drill_mode].seconds += r.duration_seconds || 0
     })
 
+    // ─── ポイント集計 ───
+    const pointEvents = detail.pointEvents || []
+    const now2 = new Date()
+    const monthStart = new Date(now2.getFullYear(), now2.getMonth(), 1)
+    const thisMonthPts = pointEvents.filter(e => new Date(e.created_at) >= monthStart)
+    const monthlyTotal = thisMonthPts.reduce((s: number, e: any) => s + (e.points || 0), 0)
+
+    // ポイントカテゴリ別集計
+    const ptCats: Record<string, number> = {}
+    thisMonthPts.forEach((e: any) => {
+      let cat = 'other'
+      if (e.event_type?.startsWith('test_')) cat = 'テスト'
+      else if (e.event_type === 'drill_complete') cat = 'ドリル'
+      else if (e.event_type?.includes('spelling')) cat = 'スペル'
+      else if (e.event_type?.includes('vocab')) cat = '単語'
+      else if (e.event_type?.startsWith('time_')) cat = '時間ボーナス'
+      else if (e.event_type?.startsWith('streak_')) cat = '連続ボーナス'
+      else if (e.event_type?.startsWith('breadth_')) cat = '幅広ボーナス'
+      else if (e.event_type?.includes('level_clear')) cat = 'Lvクリア'
+      ptCats[cat] = (ptCats[cat] || 0) + e.points
+    })
+
+    // 日別ポイント（過去30日）
+    const ptDays30: Record<string, number> = {}
+    for (let i = 29; i >= 0; i--) {
+      const d2 = new Date(now2)
+      d2.setDate(d2.getDate() - i)
+      const key2 = d2.getFullYear() + '-' + String(d2.getMonth() + 1).padStart(2, '0') + '-' + String(d2.getDate()).padStart(2, '0')
+      ptDays30[key2] = 0
+    }
+    pointEvents.forEach((e: any) => {
+      const d2 = new Date(e.created_at)
+      const key2 = d2.getFullYear() + '-' + String(d2.getMonth() + 1).padStart(2, '0') + '-' + String(d2.getDate()).padStart(2, '0')
+      if (ptDays30[key2] !== undefined) ptDays30[key2] += e.points || 0
+    })
+    const ptChartData = Object.values(ptDays30)
+
     return (
       <div className="min-h-screen bg-gray-50 p-4 md:p-8">
         <div className="max-w-5xl mx-auto space-y-6">
@@ -195,6 +232,31 @@ export default function AdminPage() {
                 {sessions.length > 0 ? `${sessions[0].pct}%` : '-'}
               </div>
               <div className="text-xs text-gray-500">最新テスト正解率</div>
+            </div>
+          </div>
+
+          {/* ポイント（お小遣い）セクション */}
+          <div className="bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-200 rounded-2xl p-5 shadow-sm">
+            <h3 className="font-bold text-amber-800 mb-3 flex items-center gap-2">
+              <Coins size={16} className="text-amber-500" />{now2.getMonth() + 1}月のお小遣い
+            </h3>
+            <div className="flex items-baseline gap-2 mb-4">
+              <span className="text-3xl font-black text-amber-600">¥{monthlyTotal.toLocaleString()}</span>
+              <span className="text-sm text-amber-500">({monthlyTotal.toLocaleString()} pt)</span>
+            </div>
+            {Object.keys(ptCats).length > 0 && (
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-4">
+                {Object.entries(ptCats).sort((a, b) => b[1] - a[1]).map(([cat, pts]) => (
+                  <div key={cat} className="bg-white/70 rounded-lg px-3 py-2">
+                    <div className="text-xs text-amber-600">{cat}</div>
+                    <div className="text-sm font-bold text-amber-800">+{pts.toLocaleString()}</div>
+                  </div>
+                ))}
+              </div>
+            )}
+            <div>
+              <div className="text-xs text-amber-600 mb-1">日別ポイント推移（過去30日）</div>
+              <MiniChart data={ptChartData} color="#d97706" />
             </div>
           </div>
 

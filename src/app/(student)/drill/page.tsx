@@ -12,6 +12,7 @@ export default function DrillPage() {
   const [drillData, setDrillData] = useState<any>(null)
   const [completed, setCompleted] = useState(false)
   const [error, setError] = useState('')
+  const [drillStartedAt] = useState(Date.now())
 
   useEffect(() => {
     try {
@@ -44,6 +45,7 @@ export default function DrillPage() {
           test_score: drillData.testScore || null,
           correct_count: 0,
           total_count: 0,
+          duration_seconds: Math.round((Date.now() - drillStartedAt) / 1000),
         })
       }
     } catch (e) { console.error('Failed to save drill record:', e) }

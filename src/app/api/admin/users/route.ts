@@ -26,9 +26,10 @@ export async function GET(req: NextRequest) {
 
   // ─── 個別ユーザー詳細 ───
   if (userId) {
-    const [drillRes, answersRes] = await Promise.all([
+    const [drillRes, answersRes, pointsRes] = await Promise.all([
       supabase.from('drill_records').select('*').eq('user_id', userId).order('completed_at', { ascending: false }),
       supabase.from('answers').select('*').eq('user_id', userId).order('created_at', { ascending: false }),
+      supabase.from('point_events').select('*').eq('user_id', userId).order('created_at', { ascending: false }),
     ])
 
     // テストセッション集計
@@ -50,6 +51,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({
       drillRecords: drillRes.data || [],
       testSessions: sessions,
+      pointEvents: pointsRes.data || [],
     })
   }
 
@@ -58,12 +60,15 @@ export async function GET(req: NextRequest) {
   const users = authUsers?.users || []
 
   // 全ドリル記録と回答を取得
-  const [drillRes, answersRes] = await Promise.all([
+  const monthStart = new Date(new Date().getFullYear(), new Date().getMonth(), 1).toISOString()
+  const [drillRes, answersRes, pointsRes] = await Promise.all([
     supabase.from('drill_records').select('user_id, duration_seconds, completed_at, drill_mode, correct_count, total_count'),
     supabase.from('answers').select('user_id, is_correct, session_id, created_at'),
+    supabase.from('point_events').select('user_id, points, created_at').gte('created_at', monthStart),
   ])
   const drills = drillRes.data || []
   const answers = answersRes.data || []
+  const allPoints = pointsRes.data || []
 
   // ユーザーごとの集計
   const userSummaries = users.map((u: any) => {
@@ -97,6 +102,7 @@ export async function GET(req: NextRequest) {
       total_correct: totalCorrect,
       test_count: testCount,
       test_pct: testPct,
+      monthly_points: allPoints.filter((p: any) => p.user_id === u.id).reduce((s: number, p: any) => s + (p.points || 0), 0),
     }
   })
 

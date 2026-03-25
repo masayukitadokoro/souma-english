@@ -2,7 +2,7 @@
 import { useEffect, useState, useMemo } from 'react'
 import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
-import { ArrowLeft, Users, Clock, Hash, TrendingUp, BookOpen, ShieldCheck, ChevronRight, Coins } from 'lucide-react'
+import { ArrowLeft, Users, Clock, Hash, TrendingUp, BookOpen, ShieldCheck, ChevronRight, Coins, BarChart3, Target } from 'lucide-react'
 
 const ADMIN_EMAILS = ['masa@unicornfarm.co', 'moe7120028@gmail.com']
 
@@ -39,8 +39,15 @@ const DRILL_LABEL: Record<string, string> = {
   spelling_practice: 'スペル練習（独立）', vocab_practice: '単語練習',
 }
 
+const CAT_LABEL: Record<string, string> = {
+  be_verb: 'be動詞', self_intro: '自己紹介', things_around: '身の回り',
+  general_verb: '一般動詞', can: 'can', present_progressive: '現在進行形',
+  past_tense: '過去形', future: '未来形', comparison: '比較',
+  passive: '受動態', relative: '関係代名詞',
+}
+
 // ─── SVG Line Chart ───
-function MiniChart({ data, color = '#6366f1' }: { data: number[]; color?: string }) {
+function MiniChart({ data, color = '#6366f1', suffix = '' }: { data: number[]; color?: string; suffix?: string }) {
   if (data.length < 2) return <div className="text-xs text-gray-400 text-center py-4">データ不足</div>
   const W = 500, H = 150, PL = 36, PR = 12, PT = 12, PB = 8
   const cW = W - PL - PR, cH = H - PT - PB
@@ -60,12 +67,47 @@ function MiniChart({ data, color = '#6366f1' }: { data: number[]; color?: string
         const y = PT + cH - (v / max) * cH
         return <g key={v}>
           <line x1={PL} y1={y} x2={W - PR} y2={y} stroke="#e5e7eb" strokeWidth={1} />
-          <text x={PL - 4} y={y + 4} textAnchor="end" fontSize={9} fill="#9ca3af">{v}</text>
+          <text x={PL - 4} y={y + 4} textAnchor="end" fontSize={9} fill="#9ca3af">{v}{suffix}</text>
         </g>
       })}
       <path d={area} fill={color} opacity={0.15} />
       <path d={line} fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
       {pts.map((p, i) => <circle key={i} cx={p.x} cy={p.y} r={3} fill={color} stroke="white" strokeWidth={1.5} />)}
+    </svg>
+  )
+}
+
+// ─── SVG Horizontal Bar Chart (単元別成績) ───
+function CategoryBarChart({ data }: { data: { label: string; pct: number; count: number }[] }) {
+  if (data.length === 0) return <div className="text-xs text-gray-400 text-center py-4">データなし</div>
+  const barH = 32, gap = 8, labelW = 110, W = 500
+  const totalH = data.length * (barH + gap) - gap + 16
+  const barArea = W - labelW - 60
+
+  return (
+    <svg viewBox={`0 0 ${W} ${totalH}`} className="w-full h-auto">
+      {data.map((d, i) => {
+        const y = i * (barH + gap) + 8
+        const bw = Math.max((d.pct / 100) * barArea, 2)
+        const color = d.pct >= 80 ? '#10b981' : d.pct >= 50 ? '#f59e0b' : '#ef4444'
+        const bgColor = d.pct >= 80 ? '#d1fae5' : d.pct >= 50 ? '#fef3c7' : '#fee2e2'
+        return (
+          <g key={i}>
+            <text x={labelW - 8} y={y + barH / 2 + 4} textAnchor="end" fontSize={11} fill="#374151" fontWeight="500">
+              {d.label}
+            </text>
+            <rect x={labelW} y={y + 2} width={barArea} height={barH - 4} rx={6} fill="#f3f4f6" />
+            <rect x={labelW} y={y + 2} width={bw} height={barH - 4} rx={6} fill={bgColor} />
+            <rect x={labelW} y={y + 2} width={bw} height={barH - 4} rx={6} fill={color} opacity={0.7} />
+            <text x={labelW + bw + 6} y={y + barH / 2 + 4} fontSize={11} fill={color} fontWeight="700">
+              {d.pct}%
+            </text>
+            <text x={W - 4} y={y + barH / 2 + 4} textAnchor="end" fontSize={9} fill="#9ca3af">
+              {d.count}問
+            </text>
+          </g>
+        )
+      })}
     </svg>
   )
 }
@@ -90,7 +132,6 @@ export default function AdminPage() {
       }
       setToken(session.access_token)
       setAuthed(true)
-      // ユーザー一覧取得
       const res = await fetch('/api/admin/users', {
         headers: { Authorization: `Bearer ${session.access_token}` },
       })
@@ -149,8 +190,52 @@ export default function AdminPage() {
     const drillChartData = Object.values(days30).map(d => d.count)
     const timeChartData = Object.values(days30).map(d => Math.round(d.seconds / 60))
 
-    // テストスコア推移
+    // テスト正解率推移（全期間）
     const scoreData = [...sessions].reverse().map(s => s.pct)
+
+    // テスト点数（正解数）推移（全期間）
+    const rawScoreData = [...sessions].reverse().map(s => s.score)
+
+    // テスト回数推移（全期間・日別）
+    const testDays: Record<string, number> = {}
+    sessions.forEach(s => {
+      const d = new Date(s.date)
+      const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+      testDays[key] = (testDays[key] || 0) + 1
+    })
+    // 全期間の日付範囲を埋める
+    const allTestDates = Object.keys(testDays).sort()
+    let testCountChartData: number[] = []
+    if (allTestDates.length >= 2) {
+      const start = new Date(allTestDates[0])
+      const end = new Date(allTestDates[allTestDates.length - 1])
+      const filled: Record<string, number> = {}
+      for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
+        const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+        filled[key] = testDays[key] || 0
+      }
+      testCountChartData = Object.values(filled)
+    } else if (allTestDates.length === 1) {
+      testCountChartData = [testDays[allTestDates[0]]]
+    }
+
+    // 単元（カテゴリ）別成績集計（全テストの回答から）
+    const catStats: Record<string, { correct: number; total: number }> = {}
+    sessions.forEach(s => {
+      (s.answers || []).forEach((a: any) => {
+        const cat = a.category || 'unknown'
+        if (!catStats[cat]) catStats[cat] = { correct: 0, total: 0 }
+        catStats[cat].total++
+        if (a.is_correct) catStats[cat].correct++
+      })
+    })
+    const categoryChartData = Object.entries(catStats)
+      .map(([cat, st]) => ({
+        label: CAT_LABEL[cat] || cat,
+        pct: st.total > 0 ? Math.round((st.correct / st.total) * 100) : 0,
+        count: st.total,
+      }))
+      .sort((a, b) => b.count - a.count)
 
     // ドリル種類集計
     const modeStats: Record<string, { count: number; seconds: number }> = {}
@@ -167,7 +252,6 @@ export default function AdminPage() {
     const thisMonthPts = pointEvents.filter(e => new Date(e.created_at) >= monthStart)
     const monthlyTotal = thisMonthPts.reduce((s: number, e: any) => s + (e.points || 0), 0)
 
-    // ポイントカテゴリ別集計
     const ptCats: Record<string, number> = {}
     thisMonthPts.forEach((e: any) => {
       let cat = 'other'
@@ -182,7 +266,6 @@ export default function AdminPage() {
       ptCats[cat] = (ptCats[cat] || 0) + e.points
     })
 
-    // 日別ポイント（過去30日）
     const ptDays30: Record<string, number> = {}
     for (let i = 29; i >= 0; i--) {
       const d2 = new Date(now2)
@@ -276,43 +359,88 @@ export default function AdminPage() {
             </div>
           </div>
 
-          {/* テストスコア推移 */}
+          {/* ═══════ テスト分析セクション ═══════ */}
           {sessions.length > 0 && (
-            <div className="bg-white rounded-2xl p-5 shadow-sm">
-              <h3 className="font-bold text-gray-800 mb-3 flex items-center gap-2">
-                <TrendingUp size={14} className="text-purple-500" />テスト正解率の推移
-              </h3>
-              <MiniChart data={scoreData} color="#8b5cf6" />
+            <>
+              {/* テスト正解率の推移 */}
+              <div className="bg-white rounded-2xl p-5 shadow-sm">
+                <h3 className="font-bold text-gray-800 mb-3 flex items-center gap-2">
+                  <TrendingUp size={14} className="text-purple-500" />テスト正解率の推移（全期間）
+                </h3>
+                <MiniChart data={scoreData} color="#8b5cf6" suffix="%" />
 
-              {/* テスト一覧テーブル */}
-              <div className="mt-4 overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b border-gray-200">
-                      <th className="text-left py-2 px-3 text-xs font-bold text-gray-500">日時</th>
-                      <th className="text-center py-2 px-3 text-xs font-bold text-gray-500">正解</th>
-                      <th className="text-center py-2 px-3 text-xs font-bold text-gray-500">問題数</th>
-                      <th className="text-center py-2 px-3 text-xs font-bold text-gray-500">正解率</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {sessions.map((s, i) => (
-                      <tr key={i} className="border-b border-gray-50 hover:bg-gray-50">
-                        <td className="py-2 px-3 text-gray-700">{fmtDateTime(s.date)}</td>
-                        <td className="py-2 px-3 text-center font-bold text-emerald-600">{s.score}</td>
-                        <td className="py-2 px-3 text-center text-gray-500">{s.total}</td>
-                        <td className="py-2 px-3 text-center">
-                          <span className={`px-2 py-0.5 rounded-full text-xs font-bold ${
-                            s.pct >= 80 ? 'bg-emerald-100 text-emerald-700' :
-                            s.pct >= 50 ? 'bg-amber-100 text-amber-700' :
-                            'bg-red-100 text-red-600'
-                          }`}>{s.pct}%</span>
-                        </td>
+                {/* テスト一覧テーブル */}
+                <div className="mt-4 overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-gray-200">
+                        <th className="text-left py-2 px-3 text-xs font-bold text-gray-500">日時</th>
+                        <th className="text-center py-2 px-3 text-xs font-bold text-gray-500">正解</th>
+                        <th className="text-center py-2 px-3 text-xs font-bold text-gray-500">問題数</th>
+                        <th className="text-center py-2 px-3 text-xs font-bold text-gray-500">正解率</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {sessions.map((s, i) => (
+                        <tr key={i} className="border-b border-gray-50 hover:bg-gray-50">
+                          <td className="py-2 px-3 text-gray-700">{fmtDateTime(s.date)}</td>
+                          <td className="py-2 px-3 text-center font-bold text-emerald-600">{s.score}</td>
+                          <td className="py-2 px-3 text-center text-gray-500">{s.total}</td>
+                          <td className="py-2 px-3 text-center">
+                            <span className={`px-2 py-0.5 rounded-full text-xs font-bold ${
+                              s.pct >= 80 ? 'bg-emerald-100 text-emerald-700' :
+                              s.pct >= 50 ? 'bg-amber-100 text-amber-700' :
+                              'bg-red-100 text-red-600'
+                            }`}>{s.pct}%</span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
+
+              {/* テスト点数推移 & テスト回数推移 */}
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-white rounded-2xl p-5 shadow-sm">
+                  <h3 className="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                    <BarChart3 size={14} className="text-blue-500" />テスト正解数の推移
+                  </h3>
+                  <p className="text-[10px] text-gray-400 mb-2">テストごとの正解数（全期間）</p>
+                  <MiniChart data={rawScoreData} color="#3b82f6" suffix="問" />
+                </div>
+                <div className="bg-white rounded-2xl p-5 shadow-sm">
+                  <h3 className="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                    <Hash size={14} className="text-amber-500" />テスト回数の推移
+                  </h3>
+                  <p className="text-[10px] text-gray-400 mb-2">日別テスト実施回数（全期間）</p>
+                  {testCountChartData.length >= 2 ? (
+                    <MiniChart data={testCountChartData} color="#f59e0b" suffix="回" />
+                  ) : (
+                    <div className="text-xs text-gray-400 text-center py-4">2日以上のデータが必要です</div>
+                  )}
+                </div>
+              </div>
+
+              {/* 単元別成績比較（棒グラフ） */}
+              {categoryChartData.length > 0 && (
+                <div className="bg-white rounded-2xl p-5 shadow-sm">
+                  <h3 className="font-bold text-gray-800 mb-3 flex items-center gap-2">
+                    <Target size={14} className="text-rose-500" />単元別 正解率（全テスト累計）
+                  </h3>
+                  <p className="text-[10px] text-gray-400 mb-3">カテゴリごとの正解率と出題数</p>
+                  <CategoryBarChart data={categoryChartData} />
+                </div>
+              )}
+            </>
+          )}
+
+          {/* テストデータなし時のプレースホルダー */}
+          {sessions.length === 0 && (
+            <div className="bg-white rounded-2xl p-8 shadow-sm text-center">
+              <TrendingUp size={32} className="text-gray-300 mx-auto mb-3" />
+              <p className="text-gray-500 font-medium">テスト記録がまだありません</p>
+              <p className="text-xs text-gray-400 mt-1">テストを受験すると、ここに推移グラフが表示されます</p>
             </div>
           )}
 

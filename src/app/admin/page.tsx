@@ -377,6 +377,7 @@ export default function AdminPage() {
                       <tr className="border-b border-gray-200">
                         <th className="text-left py-2 px-3 text-xs font-bold text-gray-500">日時</th>
                       <th className="text-left py-2 px-3 text-xs font-bold text-gray-500">レベル</th>
+                      <th className="text-left py-2 px-3 text-xs font-bold text-gray-500">レベル</th>
                         <th className="text-center py-2 px-3 text-xs font-bold text-gray-500">正解</th>
                         <th className="text-center py-2 px-3 text-xs font-bold text-gray-500">問題数</th>
                         <th className="text-center py-2 px-3 text-xs font-bold text-gray-500">正解率</th>
@@ -386,6 +387,7 @@ export default function AdminPage() {
                       {sessions.map((s, i) => (
                         <tr key={i} className="border-b border-gray-50 hover:bg-gray-50">
                           <td className="py-2 px-3 text-gray-700">{fmtDateTime(s.date)}</td>
+                          <td className="py-2 px-3"><span className="text-xs font-bold bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded-full">Lv.{s.level || "?"}</span>{s.passed && <span className="ml-1 text-[10px] bg-emerald-100 text-emerald-700 px-1.5 py-0.5 rounded-full">合格</span>}</td>
                           <td className="py-2 px-3 text-center font-bold text-emerald-600">{s.score}</td>
                           <td className="py-2 px-3 text-center text-gray-500">{s.total}</td>
                           <td className="py-2 px-3 text-center">
@@ -475,6 +477,7 @@ export default function AdminPage() {
                   <thead>
                     <tr className="border-b border-gray-200">
                       <th className="text-left py-2 px-3 text-xs font-bold text-gray-500">日時</th>
+                      <th className="text-left py-2 px-3 text-xs font-bold text-gray-500">レベル</th>
                       <th className="text-left py-2 px-3 text-xs font-bold text-gray-500">レベル</th>
                       <th className="text-left py-2 px-3 text-xs font-bold text-gray-500">種類</th>
                       <th className="text-left py-2 px-3 text-xs font-bold text-gray-500">内容</th>

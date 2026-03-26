@@ -48,6 +48,60 @@ const CAT_LABEL: Record<string, string> = {
 }
 
 // ─── SVG Line Chart ───
+const LEVEL_COLORS: Record<number, string> = { 1: '#3b82f6', 2: '#10b981', 3: '#f59e0b', 4: '#ef4444', 5: '#8b5cf6' }
+
+function LevelScoreChart({ sessions }: { sessions: { pct: number; level: number | null }[] }) {
+  const reversed = [...sessions].reverse()
+  if (reversed.length === 0) return null
+  const max = Math.max(...reversed.map(s => s.pct), 100)
+  const min = 0
+  const W = 600, H = 180, PX = 40, PY = 16
+  const cW = W - PX * 2, cH = H - PY * 2
+  const stepX = reversed.length > 1 ? cW / (reversed.length - 1) : 0
+
+  const pts = reversed.map((s, i) => ({
+    x: PX + i * stepX,
+    y: PY + cH - ((s.pct - min) / (max - min)) * cH,
+    level: s.level || 1,
+    pct: s.pct,
+  }))
+
+  // レベルごとにセグメントを描画
+  const segments: { x1: number; y1: number; x2: number; y2: number; level: number }[] = []
+  for (let i = 0; i < pts.length - 1; i++) {
+    segments.push({ x1: pts[i].x, y1: pts[i].y, x2: pts[i+1].x, y2: pts[i+1].y, level: pts[i].level })
+  }
+
+  const levels = [...new Set(reversed.map(s => s.level || 1))].sort()
+
+  return (
+    <div>
+      <div className="flex gap-3 mb-2">
+        {levels.map(lv => (
+          <span key={lv} className="flex items-center gap-1 text-[10px] text-gray-500">
+            <span className="w-3 h-1 rounded" style={{ background: LEVEL_COLORS[lv] || '#6366f1' }} />
+            Lv.{lv}
+          </span>
+        ))}
+      </div>
+      <svg viewBox={`0 0 ${W} ${H}`} className="w-full" style={{ height: 180 }}>
+        <line x1={PX} y1={PY + cH * 0.5} x2={W - PX} y2={PY + cH * 0.5} stroke="#e5e7eb" strokeDasharray="4" />
+        <text x={PX - 4} y={PY + 4} textAnchor="end" fontSize="10" fill="#9ca3af">{max}%</text>
+        <text x={PX - 4} y={PY + cH * 0.5 + 4} textAnchor="end" fontSize="10" fill="#9ca3af">{Math.round(max / 2)}%</text>
+        <text x={PX - 4} y={PY + cH + 4} textAnchor="end" fontSize="10" fill="#9ca3af">{min}%</text>
+        {segments.map((seg, i) => (
+          <line key={i} x1={seg.x1} y1={seg.y1} x2={seg.x2} y2={seg.y2}
+            stroke={LEVEL_COLORS[seg.level] || '#6366f1'} strokeWidth="2.5" strokeLinecap="round" />
+        ))}
+        {pts.map((p, i) => (
+          <circle key={i} cx={p.x} cy={p.y} r="4"
+            fill={LEVEL_COLORS[p.level] || '#6366f1'} stroke="white" strokeWidth="2" />
+        ))}
+      </svg>
+    </div>
+  )
+}
+
 function MiniChart({ data, color = '#6366f1', suffix = '' }: { data: number[]; color?: string; suffix?: string }) {
   if (data.length < 2) return <div className="text-xs text-gray-400 text-center py-4">データ不足</div>
   const W = 500, H = 150, PL = 36, PR = 12, PT = 12, PB = 8
@@ -366,9 +420,9 @@ export default function AdminPage() {
               {/* テスト正解率の推移 */}
               <div className="bg-white rounded-2xl p-5 shadow-sm">
                 <h3 className="font-bold text-gray-800 mb-3 flex items-center gap-2">
-                  <TrendingUp size={14} className="text-purple-500" />テスト正解率の推移（全期間）
+                  <TrendingUp size={14} className="text-purple-500" />レベル別テストスコアの推移
                 </h3>
-                <MiniChart data={scoreData} color="#8b5cf6" suffix="%" />
+                <LevelScoreChart sessions={sessions} />
 
                 {/* テスト一覧テーブル */}
                 <div className="mt-4 overflow-x-auto">
@@ -376,7 +430,6 @@ export default function AdminPage() {
                     <thead>
                       <tr className="border-b border-gray-200">
                         <th className="text-left py-2 px-3 text-xs font-bold text-gray-500">日時</th>
-                      <th className="text-left py-2 px-3 text-xs font-bold text-gray-500">レベル</th>
                       <th className="text-left py-2 px-3 text-xs font-bold text-gray-500">レベル</th>
                         <th className="text-center py-2 px-3 text-xs font-bold text-gray-500">正解</th>
                         <th className="text-center py-2 px-3 text-xs font-bold text-gray-500">問題数</th>
@@ -477,7 +530,6 @@ export default function AdminPage() {
                   <thead>
                     <tr className="border-b border-gray-200">
                       <th className="text-left py-2 px-3 text-xs font-bold text-gray-500">日時</th>
-                      <th className="text-left py-2 px-3 text-xs font-bold text-gray-500">レベル</th>
                       <th className="text-left py-2 px-3 text-xs font-bold text-gray-500">レベル</th>
                       <th className="text-left py-2 px-3 text-xs font-bold text-gray-500">種類</th>
                       <th className="text-left py-2 px-3 text-xs font-bold text-gray-500">内容</th>

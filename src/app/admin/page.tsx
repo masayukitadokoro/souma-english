@@ -17,6 +17,7 @@ type DrillRecord = {
 }
 type TestSession = {
   session_id: string; date: string; score: number; total: number; pct: number;
+  level: number | null; passed: boolean;
   answers: any[];
 }
 
@@ -375,6 +376,7 @@ export default function AdminPage() {
                     <thead>
                       <tr className="border-b border-gray-200">
                         <th className="text-left py-2 px-3 text-xs font-bold text-gray-500">日時</th>
+                      <th className="text-left py-2 px-3 text-xs font-bold text-gray-500">レベル</th>
                         <th className="text-center py-2 px-3 text-xs font-bold text-gray-500">正解</th>
                         <th className="text-center py-2 px-3 text-xs font-bold text-gray-500">問題数</th>
                         <th className="text-center py-2 px-3 text-xs font-bold text-gray-500">正解率</th>
@@ -473,6 +475,7 @@ export default function AdminPage() {
                   <thead>
                     <tr className="border-b border-gray-200">
                       <th className="text-left py-2 px-3 text-xs font-bold text-gray-500">日時</th>
+                      <th className="text-left py-2 px-3 text-xs font-bold text-gray-500">レベル</th>
                       <th className="text-left py-2 px-3 text-xs font-bold text-gray-500">種類</th>
                       <th className="text-left py-2 px-3 text-xs font-bold text-gray-500">内容</th>
                       <th className="text-center py-2 px-3 text-xs font-bold text-gray-500">正解</th>

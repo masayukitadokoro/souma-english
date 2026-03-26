@@ -40,6 +40,8 @@ export async function GET(req: NextRequest) {
       score: s.total_score,
       total: 100,
       pct: Math.round(s.total_score),
+      level: s.level || null,
+      passed: s.passed || false,
       answers: [],
     }))
 

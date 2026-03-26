@@ -26,27 +26,22 @@ export async function GET(req: NextRequest) {
 
   // ─── 個別ユーザー詳細 ───
   if (userId) {
-    const [drillRes, answersRes, pointsRes] = await Promise.all([
+    const [drillRes, testSessionsRes, pointsRes] = await Promise.all([
       supabase.from('drill_records').select('*').eq('user_id', userId).order('completed_at', { ascending: false }),
-      supabase.from('answers').select('*').eq('user_id', userId).order('created_at', { ascending: false }),
+      supabase.from('test_sessions').select('*').eq('user_id', userId).order('started_at', { ascending: false }),
       supabase.from('point_events').select('*').eq('user_id', userId).order('created_at', { ascending: false }),
     ])
 
-    // テストセッション集計
-    const answers = answersRes.data || []
-    const sessionMap: Record<string, any> = {}
-    answers.forEach((a: any) => {
-      const sid = a.session_id || a.id
-      if (!sessionMap[sid]) {
-        sessionMap[sid] = { session_id: sid, date: a.created_at, answers: [], score: 0, total: 0 }
-      }
-      sessionMap[sid].answers.push(a)
-      sessionMap[sid].total++
-      if (a.is_correct) sessionMap[sid].score++
-    })
-    const sessions = Object.values(sessionMap)
-      .map((s: any) => ({ ...s, pct: s.total > 0 ? Math.round((s.score / s.total) * 100) : 0 }))
-      .sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    // test_sessionsから直接取得（completed_atがあり、total_score > 0のもの）
+    const rawSessions = (testSessionsRes.data || []).filter((s: any) => s.completed_at && s.total_score > 0)
+    const sessions = rawSessions.map((s: any) => ({
+      session_id: s.id,
+      date: s.started_at,
+      score: s.total_score,
+      total: 100,
+      pct: Math.round(s.total_score),
+      answers: [],
+    }))
 
     return NextResponse.json({
       drillRecords: drillRes.data || [],
